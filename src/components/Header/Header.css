@@ -1,0 +1,331 @@
+/* Header Top Bar */
+.header {
+  width: 100%;
+  background-color: var(--color-accent-dark);
+  color: white;
+  font-size: 0.9rem;
+  padding: 0.25rem 0;
+  font-weight: 500;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* === ESTILOS REESCRITOS PARA HEADER-TOP-BAR === */
+.header-top-bar {
+  height: 44px;
+  background: var(--color-accent-dark); /* Asegúrate que esta variable es tu color granate */
+  display: flex;
+  align-items: center; /* Centra verticalmente .social-links */
+  justify-content: flex-end; /* Alinea .social-links a la derecha */
+  padding: 0 1rem; /* Padding horizontal para que no pegue a los bordes de la pantalla */
+  color: white;
+}
+
+.header-top-bar .social-links {
+  display: flex;
+  align-items: center; /* Centra los iconos individualmente si tuvieran alturas diferentes */
+  gap: 0.8rem; /* Espacio entre iconos, ajusta si es necesario */
+  margin: 0; /* Aseguramos que no haya márgenes extraños */
+  padding: 0; /* Aseguramos que no haya paddings extraños */
+}
+
+/* Estilos para los íconos individuales dentro de .social-links */
+.header-top-bar .social-links a,
+.header-top-bar .social-links .phone-link {
+  color: white;
+  font-size: 1.1rem; /* Tamaño del icono */
+  display: flex; /* Para centrar el FontAwesomeIcon si es necesario */
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem; /* Un pequeño padding alrededor del icono */
+  background-color: transparent; /* Sin fondo circular por ahora */
+  border-radius: 0; /* Sin borde redondeado por ahora */
+  width: auto; /* Ancho automático basado en contenido */
+  height: auto; /* Altura automática basada en contenido */
+  transition: color 0.2s, transform 0.2s;
+}
+
+.header-top-bar .social-links a:hover,
+.header-top-bar .social-links .phone-link:hover {
+  color: var(--color-primary-light); /* Un color más claro al hacer hover, o el que prefieras */
+  transform: translateY(-1px);
+}
+/* === FIN DE ESTILOS REESCRITOS === */
+
+.header-logo h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: white;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.header-logo h1:hover {
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+/* Estilo específico para el icono de teléfono */
+.social-links .phone-icon {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-links .phone-icon:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Header Main */
+.header-main {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.header-main .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 80px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-item a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+}
+
+.nav-item a:hover,
+.nav-item.active a {
+  color: var(--color-primary);
+}
+
+.nav-cta .btn {
+  margin-left: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.header-logo h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+  transition: color 0.3s ease;
+}
+
+.header-logo h1:hover {
+  color: var(--color-primary);
+}
+
+/* Navigation */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+.nav-item a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-item a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.nav-item a:hover,
+.nav-item.active a {
+  color: var(--color-primary);
+}
+
+.nav-item a:hover::after,
+.nav-item.active a::after {
+  width: 100%;
+}
+
+.nav-cta {
+  margin-left: 2rem;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-accent-dark);
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+  color: var(--color-primary);
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Active state for nav items */
+.nav-item.active a {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: white;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 6rem 2rem 2rem;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .mobile-menu-open .main-nav {
+    right: 0;
+  }
+
+  .mobile-menu-open .mobile-menu-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .nav-item {
+    width: 100%;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-item a {
+    display: block;
+    padding: 0.75rem 0;
+  }
+
+  .nav-cta {
+    margin: 1.5rem 0 0;
+    width: 100%;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .header.scrolled .header-main {
+    height: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-contact-info {
+    font-size: 0.8rem;
+  }
+
+  .social-links a {
+    width: 24px;
+    height: 24px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-contact-info {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 0.5rem 1rem;
+  }
+
+  .header-main .container {
+    height: 70px;
+    padding: 0 1rem;
+  }
+
+  .header-logo h1 {
+    font-size: 1.5rem;
+  }
+
+  .mobile-menu-toggle {
+    font-size: 1.25rem;
+  }
+}

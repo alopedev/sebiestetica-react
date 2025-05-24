@@ -1,0 +1,231 @@
+/* Footer Top */
+.footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-top {
+  padding: 4rem 0 2rem;
+}
+
+.footer .container {
+  max-width: var(--max-container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  width: 100%;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.footer h3,
+.footer h4 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.footer h3::after,
+.footer h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background: var(--accent-color);
+}
+
+.footer-about p {
+  margin-bottom: 1.5rem;
+  color: #bbb;
+  font-size: 0.95em; /* Reducir ligeramente el tamaño del texto */
+}
+
+.social-links {
+  display: flex;
+  gap: 0.8rem; /* Reducir el espacio entre iconos */
+  margin-top: 1.2rem;
+  flex-wrap: wrap; /* Asegurar que los iconos se ajusten en pantallas pequeñas */
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+/* Footer Links */
+.footer-links ul,
+.contact-info,
+.opening-hours {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li,
+.contact-info li,
+.opening-hours li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a,
+.contact-info a {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover,
+.contact-info a:hover {
+  color: var(--accent-color);
+  padding-left: 5px;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: #bbb;
+  margin-bottom: 0.5rem;
+  text-align: left; /* Asegurar que el texto esté alineado a la izquierda */
+}
+
+/* Asegurar que la dirección esté alineada a la izquierda */
+.contact-address {
+  text-align: left;
+  padding-left: 0;
+  list-style: none;
+}
+
+/* Ajustar el espaciado de los elementos de contacto */
+.contact-info li svg {
+  margin-top: 0.2rem; /* Ajuste fino para la alineación vertical de los iconos */
+}
+
+.contact-info svg {
+  color: var(--accent-color);
+  margin-top: 0.25rem;
+  min-width: 16px;
+}
+
+.opening-hours li {
+  display: flex;
+  justify-content: space-between;
+  color: #bbb;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.opening-hours li:last-child {
+  border-bottom: none;
+}
+
+.opening-hours span:first-child {
+  margin-right: 1rem;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background-color: #111;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.payment-methods {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.payment-icons i {
+  font-size: 2rem; /* Tamaño adecuado */
+  color: #777; /* Un gris medio, o prueba con #fff si el fondo es oscuro */
+  opacity: 1;
+  display: inline-block;
+  margin: 0 0.3rem; /* Espacio entre iconos */
+  vertical-align: middle; /* Para asegurar alineación si hay texto al lado */
+}
+
+.payment-icons i.fab {
+  font-family: 'Font Awesome 5 Brands', 'FontAwesome', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-top {
+    padding: 3rem 0 1.5rem;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .payment-methods {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .opening-hours li {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .opening-hours span:first-child {
+    margin-right: 0;
+    margin-bottom: 0.25rem;
+  }
+}
