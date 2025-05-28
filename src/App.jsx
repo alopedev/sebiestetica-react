@@ -1,19 +1,19 @@
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import './App.css';
 
-// Importar componentes de la página de inicio
+// Importar componentes
+import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import AboutSection from './components/About/AboutSection';
 import ServicesSection from './components/Services/ServicesSection';
 import CtaSection from './components/CtaSection/CtaSection';
 import Testimonials from './components/Testimonials/Testimonials';
-
-// Importar componentes de diseño
-import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
-// Página de inicio que combina los componentes
+
+
+// Definición de páginas
 function Home() {
   return (
     <>
@@ -26,57 +26,71 @@ function Home() {
   );
 }
 
-// Páginas adicionales (a implementar)
 function About() {
-  return <div className="container mx-auto p-4">
-    <h1 className="text-3xl font-bold mb-4">Sobre Nosotros</h1>
-    <p>Página en construcción. Próximamente más información sobre nuestra empresa.</p>
-  </div>;
+  return (
+    <div className="page-container">
+      <h1 className="page-title">Nosotros</h1>
+      <AboutSection />
+    </div>
+  );
 }
 
 function Services() {
-  return <div className="container mx-auto p-4">
-    <h1 className="text-3xl font-bold mb-4">Nuestros Servicios</h1>
-    <p>Página en construcción. Próximamente información detallada sobre nuestros servicios.</p>
-  </div>;
+  return (
+    <div className="page-container">
+      <h1 className="page-title">Nuestros Servicios</h1>
+      <ServicesSection />
+      <CtaSection />
+    </div>
+  );
 }
 
 function Contact() {
-  return <div className="container mx-auto p-4">
-    <h1 className="text-3xl font-bold mb-4">Contacto</h1>
-    <p>Página en construcción. Próximamente podrás contactarnos a través de este formulario.</p>
-  </div>;
+  return (
+    <div className="page-container">
+      <h1 className="page-title">Contacto</h1>
+      <div className="contact-form">
+        <form>
+          <div className="form-group">
+            <label htmlFor="name">Nombre</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Tu email" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="message">Mensaje</label>
+            <textarea id="message" name="message" placeholder="¿En qué podemos ayudarte?"></textarea>
+          </div>
+          <button type="submit" className="btn-primary">Enviar Mensaje</button>
+        </form>
+      </div>
+    </div>
+  );
 }
 
 function App() {
+  // Estado para controlar el menú móvil
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  // Cerrar el menú móvil al cambiar de ruta
-  useEffect(() => {
-    const handleRouteChange = () => {
-      if (isMobileMenuOpen) {
-        setIsMobileMenuOpen(false);
-      }
-    };
-
-    return () => {
-      // Limpiar el event listener
-      window.removeEventListener('popstate', handleRouteChange);
-    };
-  }, [isMobileMenuOpen]);
 
   return (
     <div className="app">
-      <Header isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
-      <main>
+      {/* Header con props correctas */}
+      <Header
+        isMobileMenuOpen={isMobileMenuOpen}
+        setIsMobileMenuOpen={setIsMobileMenuOpen}
+      />
+
+      <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/sobre-nosotros" element={<About />} />
+          <Route path="/servicios" element={<Services />} />
+          <Route path="/contacto" element={<Contact />} />
         </Routes>
       </main>
+
       <Footer />
     </div>
   );

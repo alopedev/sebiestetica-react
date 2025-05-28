@@ -29,9 +29,9 @@ const AboutSection = () => {
       <div className="container">
         <div className="about-grid">
           <div className="about-image">
-            <img 
-              src={aboutImage} 
-              alt="Tratamiento de estética en Sebiestetica" 
+            <img
+              src={aboutImage}
+              alt="Tratamiento de estética en Sebiestetica"
               className="about-img"
               style={{
                 width: '100%',
@@ -45,7 +45,7 @@ const AboutSection = () => {
               <span className="text">Años de Experiencia</span>
             </div>
           </div>
-          
+
           <div className="about-content">
             <div className="section-header">
               <h2 className="section-title">Bienvenidos a Sebiestetica</h2>
@@ -54,7 +54,7 @@ const AboutSection = () => {
                 En Sebiestetica nos dedicamos a realzar tu belleza natural a través de tratamientos personalizados y de la más alta calidad. Nuestro objetivo es ofrecerte una experiencia única de relajación y bienestar.
               </p>
             </div>
-            
+
             <div className="about-features">
               {features.map((feature, index) => (
                 <div className="feature-item" key={index}>
@@ -68,7 +68,7 @@ const AboutSection = () => {
                 </div>
               ))}
             </div>
-            
+
             <div className="about-cta">
               <Link to="/about" className="btn btn-primary">Conoce Más</Link>
               <Link to="/contact" className="btn btn-outline">Contáctanos</Link>

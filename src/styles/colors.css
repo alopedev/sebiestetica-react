@@ -1,20 +1,20 @@
 :root {
-  /* Colores principales */
-  --color-primary: #D9C336; /* Sebiestetica-2 */
-  --color-primary-light: #DBD94B; /* Sebiestetica-1 */
-  --color-primary-dark: #EDA024; /* Sebiestetica-3 */
+  /* Paleta principal - Inspirada en la naturaleza y la serenidad */
+  --color-primary: #8B5A2B; /* Marrón cálido - Principal */
+  --color-primary-light: #A67C52; /* Marrón claro - Secundario */
+  --color-primary-dark: #5C3A21; /* Marrón oscuro - Acento */
   
-  /* Colores de acento */
-  --color-accent: #ED462F; /* Sebiestetica-5 */
-  --color-accent-dark: #7D242E; /* Sebiestetica-4 */
+  /* Colores de acento - Inspirados en tonos terrosos y naturales */
+  --color-accent: #C4A484; /* Beige cálido - Acento suave */
+  --color-accent-dark: #7D5A50; /* Marrón terroso - Acento fuerte */
   
-  /* Colores neutrales */
-  --color-text: #333333;
-  --color-text-light: #666666;
-  --color-text-lighter: #999999;
-  --color-background: #ffffff;
-  --color-background-alt: #f8f9fa;
-  --color-border: #e9ecef;
+  /* Colores neutrales - Para texto y fondos */
+  --color-text: #2D2424; /* Casi negro para mejor legibilidad */
+  --color-text-light: #5C3D2E; /* Marrón oscuro para texto secundario */
+  --color-text-lighter: #B85C38; /* Marrón rojizo para énfasis */
+  --color-background: #FFF8F0; /* Blanco roto cálido para el fondo */
+  --color-background-alt: #F5E6D3; /* Fondo alternativo más cálido */
+  --color-border: #E0C9A6; /* Borde suave que combina con la paleta */
   
   /* Sombras */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);

@@ -1,41 +1,63 @@
-/* Footer Top */
+/* Footer */
 .footer {
   background-color: #1a1a1a;
   color: #fff;
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
-.footer-top {
-  padding: 4rem 0 2rem;
+  font-family: 'Playfair Display', serif;
+  padding: 4rem 0 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 .footer .container {
-  max-width: var(--max-container-width);
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--container-padding);
+  padding: 0 2rem;
   width: 100%;
 }
 
+/* Grid principal */
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  margin-bottom: 3rem;
 }
 
-.footer h3,
-.footer h4 {
+/* Sección de sobre nosotros */
+.footer-about h3 {
   color: #fff;
+  font-size: 1.5rem;
   margin-bottom: 1.5rem;
-  position: relative;
-  padding-bottom: 0.75rem;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
 }
 
-.footer h3::after,
-.footer h4::after {
+.footer-about p {
+  color: #bbb;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  text-align: left;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+/* Enlaces rápidos */
+.footer-links h4,
+.footer-contact h4 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  position: relative;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+}
+
+.footer-links h4::after,
+.footer-contact h4::after {
   content: '';
   position: absolute;
   left: 0;
@@ -45,34 +67,210 @@
   background: var(--accent-color);
 }
 
-.footer-about p {
-  margin-bottom: 1.5rem;
-  color: #bbb;
-  font-size: 0.95em; /* Reducir ligeramente el tamaño del texto */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
+.footer-links li {
+  margin: 0;
+}
+
+.footer-links a {
+  color: #bbb;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.footer-links a::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent-color);
+  padding-left: 1.5rem;
+}
+
+.footer-links a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Contacto */
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-align: left;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  color: #bbb;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.contact-info svg {
+  color: var(--accent-color);
+  margin-right: 1rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  width: 16px;
+  text-align: center;
+}
+
+.contact-info a {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: var(--accent-color);
+}
+
+.contact-info strong {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Redes sociales */
 .social-links {
   display: flex;
-  gap: 0.8rem; /* Reducir el espacio entre iconos */
-  margin-top: 1.2rem;
-  flex-wrap: wrap; /* Asegurar que los iconos se ajusten en pantallas pequeñas */
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  background-color: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
   color: #fff;
   border-radius: 50%;
   transition: all 0.3s ease;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .social-links a:hover {
-  background-color: var(--accent-color);
+  background: var(--accent-color);
   transform: translateY(-3px);
+  border-color: var(--accent-color);
+}
+
+/* Footer inferior */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.payment-methods {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.payment-icons svg {
+  font-size: 1.5rem;
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.payment-icons svg:hover {
+  color: var(--accent-color);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem 2rem;
+  }
+
+  .footer-about {
+    grid-column: 1 / -1;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 0 0;
+  }
+
+  .footer .container {
+    padding: 0 1.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-links ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+  }
+
+  .payment-methods {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 /* Footer Links */
@@ -94,14 +292,33 @@
 .contact-info a {
   color: #bbb;
   text-decoration: none;
-  transition: color 0.3s ease, padding-left 0.3s ease;
+  transition: all 0.3s ease;
   display: inline-block;
+  position: relative;
+  padding: 0.2rem 0;
+}
+
+.footer-links a:before,
+.contact-info a:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
 }
 
 .footer-links a:hover,
 .contact-info a:hover {
-  color: var(--accent-color);
-  padding-left: 5px;
+  color: #fff;
+  padding-left: 8px;
+}
+
+.footer-links a:hover:before,
+.contact-info a:hover:before {
+  width: 80%;
 }
 
 .contact-info li {
@@ -109,8 +326,28 @@
   align-items: flex-start;
   gap: 0.75rem;
   color: #bbb;
-  margin-bottom: 0.5rem;
-  text-align: left; /* Asegurar que el texto esté alineado a la izquierda */
+  margin-bottom: 1rem;
+  text-align: left;
+  transition: all 0.2s ease;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+}
+
+.contact-info li:hover {
+  background: rgba(255, 255, 255, 0.03);
+  transform: translateX(3px);
+}
+
+.contact-info li svg {
+  color: var(--accent-color);
+  margin-top: 0.25rem;
+  min-width: 16px;
+  transition: all 0.3s ease;
+}
+
+.contact-info li:hover svg {
+  transform: scale(1.1);
+  color: #fff;
 }
 
 /* Asegurar que la dirección esté alineada a la izquierda */
@@ -131,12 +368,27 @@
   min-width: 16px;
 }
 
+.opening-hours {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
 .opening-hours li {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
   color: #bbb;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 0;
+  margin: 0;
+  font-size: 0.95em;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.opening-hours li:hover {
+  color: #fff;
 }
 
 .opening-hours li:last-child {
@@ -144,7 +396,32 @@
 }
 
 .opening-hours span:first-child {
-  margin-right: 1rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.opening-hours span:last-child {
+  text-align: right;
+  font-family: 'Playfair Display', serif;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.opening-hours li:hover span:last-child {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(-2px);
+}
+
+/* Estilo especial para días cerrados */
+.opening-hours li:last-child span:last-child {
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1);
 }
 
 /* Footer Bottom */
@@ -172,8 +449,14 @@
 
 .payment-icons {
   display: flex;
-  gap: 0.7rem;
-  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.payment-icons svg {
+  font-size: 1.75rem;
+  margin: 0 5px;
 }
 
 .payment-icons i {
@@ -192,27 +475,113 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 992px) {
+@media (min-width: 1201px) {
   .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .footer-about {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+
+  .footer-links {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+
+  .footer-spacer {
+    flex: 0 0 10%;
+    display: block;
+  }
+
+  .footer-contact-hours {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer .container {
+    padding: 0 3rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-about {
+    grid-column: span 2;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .footer-contact-hours {
+    grid-column: span 2;
+    max-width: 100%;
+    gap: 4rem;
   }
 }
 
 @media (max-width: 768px) {
+  .footer .container {
+    padding: 0 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .footer-about,
+  .footer-contact-hours {
+    grid-column: span 1;
+  }
+
+  .footer-contact-hours {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-links ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-about,
+  .footer-links,
+  .footer-contact-hours {
+    grid-column: span 1;
+  }
+
+  .footer-contact-hours {
+    grid-template-columns: 1fr;
+  }
+
   .footer-top {
     padding: 3rem 0 1.5rem;
   }
-  
+
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
   }
-  
+
   .footer-bottom-content {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .payment-methods {
     margin-top: 1rem;
   }
@@ -223,7 +592,7 @@
     flex-direction: column;
     gap: 0.25rem;
   }
-  
+
   .opening-hours span:first-child {
     margin-right: 0;
     margin-bottom: 0.25rem;
