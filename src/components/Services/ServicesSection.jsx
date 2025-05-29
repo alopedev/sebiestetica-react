@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faPencilAlt, faEye, faMagic, faSpa, faGraduationCap, faPaintBrush } from '@fortawesome/free-solid-svg-icons';
 import './ServicesSection.css';
 import './service-links-fix.css'; // Corrección para los enlaces "Saber más"
+import './button-height-fix.css'; // Corrección para la altura del botón CTA
 
 const ServicesSection = () => {
   // Obtener la ubicación actual para determinar si estamos en la página de servicios
@@ -55,7 +56,7 @@ const ServicesSection = () => {
           <h2 className="section-title">Tratamientos de Belleza Profesionales</h2>
           <div className="section-divider"></div>
           <p className="section-description">
-            Ofrecemos una amplia gama de tratamientos de belleza y bienestar realizados por profesionales cualificados con los mejores productos del mercado.
+            Ofrecemos una amplia gama de tratamientos de belleza y bienestar realizados con técnica profesional y utilizando los mejores productos del mercado.
           </p>
         </div>
 
@@ -85,7 +86,7 @@ const ServicesSection = () => {
 
         {/* Mostrar el botón solo cuando NO estamos en la página de servicios */}
         {location.pathname !== '/servicios' && (
-          <div className="services-cta">
+          <div className="services-cta" style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
             <a
               href="/servicios"
               className="btn btn-primary"
@@ -97,13 +98,11 @@ const ServicesSection = () => {
                 height: '45px',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                padding: '0 1.5rem',
-                width: 'auto',
-                maxWidth: '220px',
-                margin: '0 auto'
+                justifyContent: 'center'
               }}
-            >Ver los Servicios</a>
+            >
+              Ver los Servicios
+            </a>
           </div>
         )}
       </div>

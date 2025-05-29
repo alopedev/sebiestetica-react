@@ -9,8 +9,8 @@ const AboutSection = () => {
   const features = [
     {
       icon: faAward,
-      title: 'Profesionales Certificados',
-      description: 'Nuestro equipo está formado por expertos con certificaciones en estética y bienestar.'
+      title: 'Profesionalidad Certificada',
+      description: 'Sebiestetica cuenta con todas las certificaciones especializadas en estética y bienestar.'
     },
     {
       icon: faUsers,
@@ -50,7 +50,7 @@ const AboutSection = () => {
             <div className="section-header">
               <h2 className="section-title">Bienvenidos</h2>
               <div className="section-divider"></div>
-              <p className="section-description">
+              <p className="section-description" style={{ fontFamily: "'Playfair Display', serif" }}>
                 En Sebiestetica nos dedicamos a realzar tu belleza natural a través de tratamientos personalizados y de la más alta calidad. Nuestro objetivo es ofrecerte una experiencia única de relajación y bienestar.
               </p>
             </div>
@@ -63,7 +63,7 @@ const AboutSection = () => {
                   </div>
                   <div className="feature-content">
                     <h4>{feature.title}</h4>
-                    <p>{feature.description}</p>
+                    <p style={{ fontFamily: "'Playfair Display', serif" }}>{feature.description}</p>
                   </div>
                 </div>
               ))}
