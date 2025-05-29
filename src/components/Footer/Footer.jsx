@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="footer-about">
             <h3>Sebiestetica</h3>
             <p>Tu centro de belleza y bienestar en Reus. Ofrecemos tratamientos personalizados para realzar tu belleza natural.</p>
-            
+
             <div className="social-links">
               <a href="https://www.facebook.com/SebiEstetica/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <FontAwesomeIcon icon={faFacebookF} />
@@ -35,7 +35,7 @@ const Footer = () => {
             <h4>Enlaces Rápidos</h4>
             <ul>
               <li><Link to="/">Inicio</Link></li>
-              <li><Link to="/sobre-nosotros">Sobre Nosotros</Link></li>
+              <li><Link to="/nosotros">Nosotros</Link></li>
               <li><Link to="/servicios">Servicios</Link></li>
               <li><Link to="/contacto">Contacto</Link></li>
               <li><Link to="/politica-privacidad">Política de Privacidad</Link></li>
@@ -60,10 +60,6 @@ const Footer = () => {
                 <a href="tel:+34977333869">977 33 38 69</a>
               </li>
               <li>
-                <FontAwesomeIcon icon={faEnvelope} />
-                <a href="mailto:info@sebiestetica.com">info@sebiestetica.com</a>
-              </li>
-              <li>
                 <FontAwesomeIcon icon={faClock} />
                 <div>
                   <strong>Horario:</strong><br />
@@ -80,14 +76,6 @@ const Footer = () => {
         {/* Footer inferior */}
         <div className="footer-bottom">
           <p>&copy; {currentYear} Sebiestetica. Todos los derechos reservados.</p>
-          <div className="payment-methods">
-            <span>Aceptamos:</span>
-            <div className="payment-icons">
-              <FontAwesomeIcon icon={faCcVisa} />
-              <FontAwesomeIcon icon={faCcMastercard} />
-              <FontAwesomeIcon icon={faCcPaypal} />
-            </div>
-          </div>
         </div>
       </div>
     </footer>

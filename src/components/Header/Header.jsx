@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { navigateWithTransition } from '../NavigationManager';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -61,24 +62,61 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
           <nav className={`main-nav ${isMobileMenuOpen ? 'active' : ''}`}>
             <ul className="nav-links">
               <li className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}>
-                <Link to="/">Inicio</Link>
+                <a 
+                  href="/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateWithTransition('/');
+                  }}
+                >Inicio</a>
               </li>
-              <li className={`nav-item ${location.pathname === '/about' ? 'active' : ''}`}>
-                <Link to="/about">Sobre Nosotros</Link>
+              <li className={`nav-item ${location.pathname === '/sobre-nosotros' ? 'active' : ''}`}>
+                <a 
+                  href="/sobre-nosotros"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateWithTransition('/sobre-nosotros');
+                  }}
+                >Nosotros</a>
               </li>
-              <li className={`nav-item ${location.pathname === '/services' ? 'active' : ''}`}>
-                <Link to="/services">Servicios</Link>
+              <li className={`nav-item ${location.pathname === '/servicios' ? 'active' : ''}`}>
+                <a 
+                  href="/servicios"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateWithTransition('/servicios');
+                  }}
+                >Servicios</a>
               </li>
-              <li className={`nav-item ${location.pathname === '/contact' ? 'active' : ''}`}>
-                <Link to="/contact">Contacto</Link>
+              <li className={`nav-item ${location.pathname === '/contacto' ? 'active' : ''}`}>
+                <a 
+                  href="/contacto"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateWithTransition('/contacto');
+                  }}
+                >Contacto</a>
               </li>
             </ul>
             <div className="nav-cta">
-              <Link to="/contact" className="btn btn-primary">Reserva Ahora</Link>
+              <a 
+                href="/contacto" 
+                className="btn btn-primary"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateWithTransition('/contacto');
+                }}
+                style={{
+                  height: '45px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >Reserva Ahora</a>
             </div>
 
-            <button 
-              className="mobile-menu-toggle" 
+            <button
+              className="mobile-menu-toggle"
               onClick={toggleMobileMenu}
               aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
             >
@@ -94,8 +132,8 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
 
       {/* Overlay para el menú móvil */}
       {isMobileMenuOpen && (
-        <div 
-          className="mobile-menu-overlay" 
+        <div
+          className="mobile-menu-overlay"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}

@@ -1,0 +1,43 @@
+/* Solución definitiva para el problema de scroll */
+
+/* Forzar que el contenido siempre esté en la parte superior visible */
+.service-page {
+  position: relative !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  padding-top: 120px !important; /* Espacio para la navbar */
+  overflow-x: hidden !important;
+}
+
+/* Asegurar que el contenido principal es lo primero que se ve */
+.service-header {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Ajustar altura máxima para prevenir scroll inicial no deseado */
+.main-content {
+  min-height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Forzar que la página se muestre correctamente en móviles */
+@media (max-width: 768px) {
+  .service-page {
+    padding-top: 100px !important;
+  }
+}
+
+/* Hack para forzar el reflow del DOM y asegurar scroll al inicio */
+body.service-page-active {
+  overflow-y: auto !important;
+  height: auto !important;
+}
+
+/* Fix para la navegación - asegurar que los links no llevan al final de la página */
+a[href^="/servicios/"] {
+  scroll-behavior: auto !important;
+}

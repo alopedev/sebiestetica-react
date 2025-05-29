@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { navigateWithTransition } from '../NavigationManager';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faCalendarAlt, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import './Hero.css';
@@ -45,12 +46,12 @@ const Hero = () => {
 
     const startTransition = () => {
       setIsTransitioning(true);
-      
+
       // Después de la mitad de la transición, cambiar la imagen de fondo
       transitionTimeout.current = setTimeout(() => {
         setCurrentBgIndex(nextBgIndex);
         setNextBgIndex((nextBgIndex + 1) % backgroundImages.length);
-        
+
         // Restaurar opacidad después de la transición
         setTimeout(() => {
           setIsTransitioning(false);
@@ -89,28 +90,54 @@ const Hero = () => {
         <div className="hero-bg-layer current"></div>
         <div className="hero-bg-layer next"></div>
       </div>
-      
+
       <div className="container">
         <div className="hero-content">
-          <h1 className="hero-title">Sebiestética</h1>
+          <h1 className="hero-title">Sebiestetica</h1>
           <h2 className="hero-subtitle">Tu espacio de belleza y bienestar en Reus</h2>
           <p className="hero-text">
-            Descubre una experiencia única de cuidado personal donde la belleza se encuentra con la relajación. 
+            Descubre una experiencia única de cuidado personal donde la belleza se encuentra con la relajación.
             Nuestros tratamientos profesionales están diseñados para realzar tu belleza natural.
           </p>
           <div className="hero-buttons">
-            <Link to="/servicios" className="btn btn-primary">
+            <a 
+              href="/servicios" 
+              className="btn btn-primary"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateWithTransition('/servicios');
+              }}
+              style={{
+                height: '45px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
               Ver Tratamientos
-            </Link>
-            <a href="#contacto" className="btn btn-secondary">
+            </a>
+            <a 
+              href="/contacto" 
+              className="btn btn-secondary"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateWithTransition('/contacto');
+              }}
+              style={{
+                height: '45px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
               Reserva tu cita
             </a>
           </div>
         </div>
       </div>
-      
+
       <div className="hero-overlay"></div>
-      
+
       <div className="hero-scroll">
         <span>Desliza para descubrir</span>
         <FontAwesomeIcon icon={faArrowDown} className="scroll-icon" />

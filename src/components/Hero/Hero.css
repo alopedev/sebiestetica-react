@@ -157,10 +157,11 @@
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.8s ease-out 0.4s forwards;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   font-weight: 500;
   line-height: 1.4;
   font-style: italic;
+  color: #BA6B47; /* Nuevo color más claro para mejorar la visibilidad */
 }
 
 .hero-text {

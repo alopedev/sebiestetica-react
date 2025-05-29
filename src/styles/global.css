@@ -33,13 +33,13 @@
 
 /* Variables CSS */
 :root {
-  /* Colores */
+    /* Colores */
   --primary-color: var(--color-primary);
   --accent-color: var(--color-accent);
   --secondary-color: var(--color-primary-light);
   --light-accent: var(--color-accent);
   --warm-accent: var(--color-text-lighter);
-
+  
   /* Tipografía */
   --font-primary: 'Playfair Display', serif;
   --font-heading: var(--font-primary);
@@ -155,25 +155,26 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 1.8rem !important;
   border-radius: 50px;
   font-weight: 600;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif !important;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
   border: 2px solid transparent;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  font-size: 0.95rem;
-  min-width: 200px;
+  font-size: 0.9rem !important;
   position: relative;
   overflow: hidden;
   z-index: 1;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  color: white;
-  text-decoration: none;
-  gap: 0.6rem;
+  height: auto !important;
+  line-height: 1.2 !important;
+  min-width: 160px !important;
+  color: white !important;
+  text-decoration: none !important;
 }
 
 /* Estilos para iconos dentro de botones */
@@ -194,18 +195,16 @@ img {
   transform: translateX(3px);
 }
 
-/* Estilos para botones primarios */
+/* Estilos específicos para botones primarios */
 .btn-primary, .cta-btn-primary {
-  background: linear-gradient(135deg, var(--accent-color), var(--warm-accent));
-  color: white;
-  box-shadow: 0 4px 15px rgba(237, 70, 47, 0.3);
-  border: 2px solid var(--accent-color);
+  background: linear-gradient(135deg, var(--accent-color), var(--warm-accent)) !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(237, 70, 47, 0.3) !important;
 }
 
 .btn-primary:hover, .cta-btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(237, 70, 47, 0.4);
-  background: linear-gradient(135deg, var(--warm-accent), var(--accent-color));
+  box-shadow: 0 8px 20px rgba(237, 70, 47, 0.4) !important;
 }
 
 /* Efecto de brillo para botones primarios */
@@ -226,27 +225,39 @@ img {
   transform: translateX(100%);
 }
 
-/* Estilos para botones secundarios */
+/* Estilos específicos para botones secundarios */
 .btn-secondary, .cta-btn-secondary {
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: transparent !important;
+  border: 2px solid white !important;
+  color: white !important;
+  box-shadow: none !important;
 }
 
 .btn-secondary:hover, .cta-btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1) !important;
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border-color: white;
 }
 
 /* Estilos para iconos en botones */
 .btn .btn-icon, .cta-btn .btn-icon,
 .btn svg, .cta-btn svg {
   margin-right: 0.5rem;
-  font-size: 1.1em;
+  font-size: 1.2em;
   transition: transform 0.3s ease;
+  vertical-align: middle;
+  color: inherit;
+}
+
+.btn-primary svg, .cta-btn-primary svg,
+.btn-primary .btn-icon, .cta-btn-primary .btn-icon {
+  color: white;
+  fill: white;
+}
+
+.btn-secondary svg, .cta-btn-secondary svg,
+.btn-secondary .btn-icon, .cta-btn-secondary .btn-icon {
+  color: white;
+  fill: white;
 }
 
 .btn:hover .btn-icon, .cta-btn:hover .btn-icon,
@@ -257,9 +268,21 @@ img {
 /* Prevenir cambios de color en hover */
 .btn:hover, .btn:focus, .btn:active,
 .cta-btn:hover, .cta-btn:focus, .cta-btn:active {
-  color: white;
   text-decoration: none;
 }
+
+/* Prevenir cambios de color en hover para todos los botones */
+.btn:hover,
+.btn:focus,
+.btn:active,
+a.btn:hover,
+a.btn:focus,
+a.btn:active {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+
 
 /* Prevenir cambios de color en hover para todos los botones */
 .btn:hover,
@@ -401,10 +424,54 @@ a[data-component-name="LinkWithRef"]:hover {
   color: var(--accent-color);
 }
 
+/* Estilos específicos para botones de CtaSection */
+a[data-component-name="CtaSection"], 
+Link[data-component-name="CtaSection"] {
+  padding: 0.8rem 1.8rem !important;
+  font-size: 0.9rem !important;
+  min-width: 160px !important;
+}
+
+a[data-component-name="CtaSection"] .btn-icon, 
+Link[data-component-name="CtaSection"] .btn-icon {
+  font-size: 1.1em !important;
+  width: 1.1em !important;
+  height: 1.1em !important;
+}
+
 /* Animaciones */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos directos para los botones CTA - Alta prioridad */
+.cta-section .cta-buttons a.cta-btn {
+  padding: 0.8rem 1.8rem !important;
+  font-size: 0.9rem !important;
+  min-width: 160px !important;
+}
+
+.cta-section .cta-buttons a.cta-btn .btn-icon,
+.cta-section .cta-buttons a.cta-btn svg {
+  font-size: 1.1em !important;
+  width: 1.1em !important;
+  height: 1.1em !important;
+}
+
+/* Estilos para que los botones sean iguales al del Hero */
+a[data-component-name="LinkWithRef"].cta-btn,
+a[data-component-name="CtaSection"].cta-btn {
+  padding: 0.8rem 1.8rem !important;
+  font-size: 0.9rem !important;
+  min-width: 160px !important;
+}
+
+a[data-component-name="LinkWithRef"].cta-btn .btn-icon,
+a[data-component-name="CtaSection"].cta-btn .btn-icon {
+  font-size: 1.1em !important;
+  width: 1.1em !important;
+  height: 1.1em !important;
 }
 
 .fade-in {

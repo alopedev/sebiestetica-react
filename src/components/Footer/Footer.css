@@ -32,6 +32,7 @@
   margin-bottom: 1.5rem;
   font-weight: 600;
   font-family: 'Playfair Display', serif;
+  text-align: left;
 }
 
 .footer-about p {
@@ -114,6 +115,7 @@
 
 /* Contacto */
 .contact-info {
+  font-family: 'Playfair Display', serif;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -124,6 +126,7 @@
 }
 
 .contact-info li {
+  font-family: 'Playfair Display', serif;
   display: flex;
   align-items: flex-start;
   color: #bbb;

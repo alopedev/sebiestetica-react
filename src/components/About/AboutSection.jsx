@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faAward, faUsers, faSmile } from '@fortawesome/free-solid-svg-icons';
@@ -41,14 +41,14 @@ const AboutSection = () => {
               }}
             />
             <div className="experience-badge">
-              <span className="years">10+</span>
+              <span className="years">20+</span>
               <span className="text">Años de Experiencia</span>
             </div>
           </div>
 
           <div className="about-content">
             <div className="section-header">
-              <h2 className="section-title">Bienvenidos a Sebiestetica</h2>
+              <h2 className="section-title">Bienvenidos</h2>
               <div className="section-divider"></div>
               <p className="section-description">
                 En Sebiestetica nos dedicamos a realzar tu belleza natural a través de tratamientos personalizados y de la más alta calidad. Nuestro objetivo es ofrecerte una experiencia única de relajación y bienestar.
@@ -69,10 +69,7 @@ const AboutSection = () => {
               ))}
             </div>
 
-            <div className="about-cta">
-              <Link to="/about" className="btn btn-primary">Conoce Más</Link>
-              <Link to="/contact" className="btn btn-outline">Contáctanos</Link>
-            </div>
+            {/* Se han eliminado los botones a petición del usuario */}
           </div>
         </div>
       </div>

@@ -1,0 +1,22 @@
+/* Eliminar específicamente las líneas decorativas señaladas con flechas rojas */
+
+/* Ocultar el elemento section-divider que contiene las líneas marcadas con flechas rojas */
+.section-divider,
+.AboutSection .section-divider,
+.ServicesSection .section-divider,
+div[data-component-name="AboutSection"] .section-divider,
+div[data-component-name="ServicesSection"] .section-divider {
+  display: none !important;
+}
+
+/* También eliminar las segundas líneas decorativas en cualquier otro lugar */
+.section-title + hr,
+.section-title + div,
+.section-header h2 + hr,
+.section-header h2 + div,
+.title-decorator + hr,
+.title-decorator + div,
+h2.with-line + hr,
+h2.with-line + div {
+  display: none !important;
+}

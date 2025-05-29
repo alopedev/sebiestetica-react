@@ -1,0 +1,97 @@
+/* Mejoras de rendimiento y estética para la web de Sebiestetica */
+
+/* Eliminar barra de desplazamiento pero mantener la funcionalidad de scroll */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+body {
+  overflow-y: scroll; /* Mantener la capacidad de scroll */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Optimización de rendimiento */
+* {
+  will-change: auto !important; /* Prevenir uso excesivo de GPU */
+  backface-visibility: hidden; /* Reducir parpadeos */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimizar animaciones */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in, 
+  .fade-out,
+  .slide-in,
+  .hero-content,
+  .section-content {
+    transition: opacity 0.5s ease, transform 0.5s ease !important;
+  }
+}
+
+/* Evitar bloques de layout durante la carga */
+html, body, #root, .app {
+  height: 100%;
+}
+
+/* Mejora para las transiciones entre páginas */
+.page-transition-overlay {
+  background-color: rgba(237, 226, 214, 0.95) !important; /* Color más cercano a la paleta del sitio */
+  backdrop-filter: blur(10px);
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out !important;
+}
+
+.transition-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.page-transition-overlay.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.page-transition-overlay.visible .transition-logo {
+  opacity: 1;
+}
+
+.transition-logo span {
+  display: block;
+  font-size: 2.5rem !important;
+  color: #BA6B47 !important; /* Color coordinado con el resto del sitio */
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px;
+}
+
+/* Reducir trabajo de layout y paint */
+img, video {
+  content-visibility: auto;
+}
+
+/* Optimización de carga de fuentes */
+@font-face {
+  font-family: 'Playfair Display';
+  font-display: swap;
+  src: local('Playfair Display'), url('https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtXK-F2qO0g.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+  src: local('Montserrat'), url('https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXx-p7K4KLg.woff') format('woff');
+}

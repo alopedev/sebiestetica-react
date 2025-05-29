@@ -1,0 +1,37 @@
+/* Correcciones para las páginas de servicios */
+
+/* 1. Asegurar que se use la fuente Playfair Display */
+.service-page h1,
+.service-page h2,
+.service-page p,
+.service-page li,
+.service-title,
+.service-subtitle,
+.service-section h2,
+.service-section p,
+.service-features-list li,
+.service-benefits-list li {
+  font-family: 'Playfair Display', serif !important;
+}
+
+/* 2. Corregir el problema de la navbar que tapa el título */
+.service-page {
+  padding-top: 8rem !important; /* Espacio suficiente para evitar que la navbar tape el contenido */
+}
+
+.service-header {
+  margin-top: 2rem !important;
+}
+
+/* 3. Corregir el problema con las imágenes */
+.service-main-image {
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+  border-radius: 10px !important;
+}
+
+/* 4. Ocultar el elemento service-cta que el usuario quiere eliminar */
+.service-cta {
+  display: none !important;
+}

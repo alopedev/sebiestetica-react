@@ -1,0 +1,95 @@
+/* Corrección para el layout general de la página */
+
+/* 1. Aumentar el ancho máximo del contenedor */
+.container {
+  max-width: 1400px !important; /* Aumentado de 1200px */
+}
+
+/* 2. Ampliar el formulario de contacto */
+.contact-form {
+  min-width: 700px !important;
+  width: 80% !important;
+  max-width: 900px !important;
+  margin: 0 auto 3rem !important;
+  padding: 2.5rem !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 3. Centrar el texto del botón de enviar */
+.contact-form button[type="submit"],
+button[data-component-name="Contact"] {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto !important;
+  min-width: 200px !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+/* 4. Redondear las esquinas del hero */
+.hero, 
+.hero-bg,
+.hero-bg-layer {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  margin-bottom: 2rem !important;
+}
+
+/* 5. Cambiar el color del footer-bottom para que coincida con el resto del footer */
+.footer-bottom {
+  background-color: #1A1A1A !important;
+  color: #ffffff !important;
+}
+
+/* Asegurar que todos los textos e iconos sean visibles en el footer oscuro */
+.footer-bottom p,
+.footer-bottom span,
+.footer-bottom a {
+  color: #ffffff !important;
+  fill: currentColor !important;
+}
+
+/* Ajustar el estilo del texto de copyright */
+.footer-bottom p {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 0.8rem !important;
+  font-weight: 400 !important;
+  text-align: center !important;
+  padding: 1rem 0 !important;
+}
+
+/* Eliminación de las SEGUNDAS líneas decorativas en títulos (las marcadas con X) */
+.section-title::after,
+.title-decorator::after,
+h2::after,
+h2 > span::after,
+.title-with-line::after,
+.section-header::after,
+.section-header h2::after,
+.section-title hr:last-of-type,
+.title-decorator hr:last-of-type,
+.title-with-line hr:last-of-type,
+.section-header hr:last-of-type {
+  display: none !important;
+}
+
+/* 6. Restaurar estilo original de los iconos sociales */
+.social-links a {
+  color: var(--color-primary, #8B5A2B) !important;
+  transition: color 0.3s ease !important;
+}
+
+.social-links a:hover {
+  color: var(--color-accent-dark, #7D5A50) !important;
+}
+
+/* 8. Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  .contact-form {
+    min-width: auto !important;
+    width: 95% !important;
+    padding: 1.5rem !important;
+  }
+}

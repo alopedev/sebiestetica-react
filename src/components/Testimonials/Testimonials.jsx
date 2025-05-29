@@ -211,12 +211,7 @@ const Testimonials = () => {
             }}>
               {renderStars(averageRating)}
             </div>
-            <div className="google-reviews-count" style={{
-              fontSize: '1rem',
-              color: '#5f6368',
-              marginBottom: '1.25rem',
-              fontWeight: 500
-            }}>A base de {totalReviews} reseñas</div>
+            {/* El texto de reseñas ha sido eliminado a petición del usuario */}
             <div style={{
               display: 'flex',
               justifyContent: 'center',

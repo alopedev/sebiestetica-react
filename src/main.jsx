@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { applyPerformanceOptimizations, optimizeFonts } from './components/performance-optimizations';
 import { faBars, faTimes, faPhone, faArrowDown, faCalendarAlt, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import App from './App';
@@ -10,6 +11,10 @@ import App from './App';
 import './index.css';
 import './styles/colors.css';
 import './styles/global.css';
+import './styles/background-fix.css'; // Corrección para unificar colores y mejorar formulario
+import './styles/layout-fixes.css'; // Corrección para el layout general, formulario y hero
+import './components/social-icons-fix.css'; // Mejoras para los iconos sociales
+import './styles/title-line-fix.css'; // Solución definitiva para las líneas decorativas
 
 // Configurar FontAwesome
 library.add(faBars, faTimes, faPhone, faArrowDown, faCalendarAlt, faSpinner, faFacebookF, faInstagram);
@@ -21,3 +26,15 @@ root.render(
     <App />
   </BrowserRouter>
 );
+
+// Aplicar optimizaciones de rendimiento después de que la aplicación se haya cargado
+window.addEventListener('load', () => {
+  // Pequeño retraso para asegurar que los componentes principales ya se hayan renderizado
+  setTimeout(() => {
+    applyPerformanceOptimizations();
+    optimizeFonts();
+    
+    // Registrar que las optimizaciones se han aplicado
+    console.log('Optimizaciones de rendimiento aplicadas');
+  }, 200);
+});

@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import ScrollFix from './components/ScrollFix';
+import PageTransition from './components/PageTransition';
+import NavigationManager from './components/NavigationManager';
 import './App.css';
+import './components/button-fix.css'; // Corrección para el botón de contacto
+import './components/performance-fixes.css'; // Optimizaciones de rendimiento
 
 // Importar componentes
 import Header from './components/Header/Header';
@@ -10,6 +15,14 @@ import ServicesSection from './components/Services/ServicesSection';
 import CtaSection from './components/CtaSection/CtaSection';
 import Testimonials from './components/Testimonials/Testimonials';
 import Footer from './components/Footer/Footer';
+
+// Importar páginas de servicios individuales
+import Microblading from './pages/Services/Microblading';
+import Micropigmentacion from './pages/Services/Micropigmentacion';
+import Micropuncion from './pages/Services/Micropuncion';
+import EscuelaMaquillaje from './pages/Services/EscuelaMaquillaje';
+import DisenoCejas from './pages/Services/DisenoCejas';
+import TinteCejasPestanas from './pages/Services/TinteCejasPestanas';
 
 
 
@@ -27,6 +40,11 @@ function Home() {
 }
 
 function About() {
+  // Asegurar scroll al inicio en la sección Nosotros
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="page-container">
       <h1 className="page-title">Nosotros</h1>
@@ -36,6 +54,11 @@ function About() {
 }
 
 function Services() {
+  // Asegurar scroll al inicio en la sección Servicios
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="page-container">
       <h1 className="page-title">Nuestros Servicios</h1>
@@ -45,7 +68,14 @@ function Services() {
   );
 }
 
+// Se ha reemplazado por el componente ScrollFix
+
 function Contact() {
+  // Asegurar scroll al inicio en la sección Contacto
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="page-container">
       <h1 className="page-title">Contacto</h1>
@@ -76,6 +106,15 @@ function App() {
 
   return (
     <div className="app">
+      {/* Componente de transición entre páginas */}
+      <PageTransition />
+      
+      {/* Componente para manejar la navegación con transiciones */}
+      <NavigationManager />
+      
+      {/* Componente mejorado que asegura el scroll al inicio en cada navegación */}
+      <ScrollFix />
+      
       {/* Header con props correctas */}
       <Header
         isMobileMenuOpen={isMobileMenuOpen}
@@ -88,6 +127,14 @@ function App() {
           <Route path="/sobre-nosotros" element={<About />} />
           <Route path="/servicios" element={<Services />} />
           <Route path="/contacto" element={<Contact />} />
+          
+          {/* Rutas para servicios individuales */}
+          <Route path="/servicios/microblading" element={<Microblading />} />
+          <Route path="/servicios/micropigmentacion" element={<Micropigmentacion />} />
+          <Route path="/servicios/micropuncion" element={<Micropuncion />} />
+          <Route path="/servicios/escuela-maquillaje" element={<EscuelaMaquillaje />} />
+          <Route path="/servicios/diseno-cejas" element={<DisenoCejas />} />
+          <Route path="/servicios/tinte-cejas-pestanas" element={<TinteCejasPestanas />} />
         </Routes>
       </main>
 
