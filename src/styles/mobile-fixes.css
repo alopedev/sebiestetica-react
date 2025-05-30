@@ -1,0 +1,355 @@
+/* Soluciones definitivas para dispositivos móviles */
+
+/* Ocultar/mostrar los botones según versión */
+.mobile-location-btn {
+  display: none !important; /* Oculto por defecto */
+}
+
+.desktop-location-btn {
+  display: flex !important; /* Visible por defecto */
+}
+
+/* Menú hamburguesa siempre visible en móviles */
+@media (max-width: 992px) {
+  /* Reset completo del header para móvil */
+  .header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    z-index: 1000 !important;
+    height: auto !important;
+    background: transparent !important;
+  }
+  
+  /* Barra superior con iconos sociales */
+  .header-top-bar {
+    background-color: rgba(178, 124, 96, 0.8) !important;
+    height: 40px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 0 !important;
+    z-index: 1001 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; /* Sutil separador */
+  }
+  
+  /* Barra principal con navegación - altura reducida para eliminar espacio blanco */
+  .header-main {
+    background-color: white !important;
+    height: 0 !important; /* Eliminamos el espacio blanco */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding: 0 !important;
+    z-index: 1002 !important;
+    box-shadow: none !important; /* Eliminada la sombra */
+    overflow: hidden !important; /* Ocultar contenido */
+  }
+  
+  /* Contenedor para hamburguesa y botón */
+  .header-main .container {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 !important;
+  }
+  
+  /* Reorganizar elementos para la versión móvil */
+  .header-main .container {
+    position: relative !important;
+    display: flex !important;
+    justify-content: space-between !important; /* Distribuir los elementos */
+    align-items: center !important;
+    padding: 0 15px !important;
+    flex-wrap: nowrap !important;
+  }
+  
+  /* El logo se oculta en móvil */
+  .header-logo {
+    display: none !important;
+  }
+  
+  /* Control de visibilidad de botones en móvil */
+  .mobile-location-btn {
+    display: flex !important; /* Mostrar en móvil */
+    position: static !important; /* Ahora fluye normalmente con los otros iconos */
+    height: 20px !important;
+    width: 20px !important;
+    z-index: 1010 !important;
+    color: white !important; /* Color blanco como los iconos sociales */
+    font-size: 16px !important;
+    background-color: transparent !important;
+  }
+  
+  .desktop-location-btn {
+    display: none !important; /* Ocultar en móvil */
+  }
+  
+  /* Ocultar completamente el botón de texto en móvil */
+  .btn.btn-primary.desktop-location-btn {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+  }
+  
+  /* Botón hamburguesa en la barra blanca */
+  .mobile-menu-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+    color: #333 !important; /* Color oscuro para el fondo blanco */
+    position: fixed !important; /* Cambiado a fixed para mejor posicionamiento */
+    top: 50px !important; /* Posicionado en la barra blanca */
+    left: 15px !important; /* Ahora en la izquierda */
+    z-index: 1100 !important; /* Aumentado para asegurar visibilidad */
+    font-size: 24px !important; /* Tamaño aumentado para mejor visibilidad */
+  }
+  
+  /* Ajuste de tamaño del icono */
+  .mobile-menu-toggle svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  
+  /* Espacio para equilibrar el layout - eliminado el espacio extra */
+  .header-spacer {
+    display: none !important;
+  }
+  
+  /* Ocultar el logo en móvil para dar más espacio */
+  .header-logo {
+    display: none !important;
+  }
+  
+  /* Asegurar que los iconos sociales permanezcan visibles y bien posicionados */
+  .social-links {
+    display: flex !important;
+    justify-content: space-evenly !important; /* Repartir por igual */
+    width: 100% !important;
+    padding: 0 10px !important;
+    z-index: 1002 !important;
+  }
+  
+  /* Tamaño de los iconos sociales */
+  .social-links a {
+    width: 30px !important;
+    height: 30px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 50% !important;
+    color: white !important;
+  }
+  
+  /* Tamaño del icono */
+  .social-links a svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  /* Estilo para cuando el menú está abierto - ajustado */
+  .mobile-menu-open .main-nav {
+    display: flex !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important; /* A la derecha */
+    height: 100vh !important;
+    width: 280px !important;
+    background: white !important;
+    z-index: 9998 !important;
+    padding-top: 70px !important;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1) !important; /* Sombra al lado izquierdo */
+    opacity: 1 !important; /* Asegurar visibilidad completa */
+  }
+
+  /* Ocultar la navegación horizontal en móvil */
+  .main-nav .nav-links {
+    display: none !important;
+  }
+
+  /* Mostrar la navegación vertical cuando el menú está abierto */
+  .mobile-menu-open .main-nav .nav-links {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  /* Estilo para los elementos de navegación en móvil */
+  .mobile-menu-open .main-nav .nav-item {
+    width: 100% !important;
+    padding: 10px 20px !important;
+    border-bottom: 1px solid rgba(178, 124, 96, 0.1) !important;
+    position: relative !important;
+  }
+  
+  /* Eliminar las líneas decorativas en el menú hamburguesa */
+  .mobile-menu-open .main-nav .nav-item.active::after,
+  .mobile-menu-open .main-nav .nav-item::after {
+    display: none !important;
+  }
+
+  /* Estilo para los enlaces en el menú móvil - usando Link de React Router */
+  .mobile-menu-open .main-nav .nav-item a,
+  .mobile-menu-open .main-nav .nav-item a:visited,
+  .mobile-menu-open .main-nav .nav-item a:link,
+  .mobile-menu-open .main-nav .nav-links li a {
+    display: block !important;
+    width: 100% !important;
+    font-size: 18px !important;
+    padding: 15px 0 !important;
+    text-decoration: none !important;
+    color: #333 !important;
+    transition: all 0.3s ease !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    z-index: 10000 !important;
+    position: relative !important;
+    text-align: center !important;
+    touch-action: manipulation !important; /* Mejor comportamiento táctil */
+  }
+  
+  /* Estilo para cualquier elemento Link de React Router en el menú */
+  .mobile-menu-open .main-nav .nav-links li a,
+  .mobile-menu-open .main-nav .nav-links li a:visited,
+  .mobile-menu-open .main-nav .nav-links li a:link,
+  .mobile-menu-open .main-nav .nav-item a,
+  .mobile-menu-open .main-nav .nav-item a:visited,
+  .mobile-menu-open .main-nav .nav-item a:link {
+    display: block !important;
+    width: 100% !important;
+    font-size: 18px !important;
+    padding: 15px 0 !important;
+    text-decoration: none !important;
+    color: #333 !important;
+    background-color: transparent !important;
+    border: none !important;
+    text-align: center !important;
+    margin: 0 !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    outline: none !important;
+  }
+  
+  /* Asegurar que los enlaces sean clickeables */
+  .mobile-menu-open .main-nav .nav-item a:hover {
+    color: rgba(178, 124, 96, 1) !important;
+    background-color: rgba(178, 124, 96, 0.05) !important;
+  }
+
+  /* Overlay más claro cuando el menú está abierto */
+  .mobile-menu-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: transparent !important; /* Sin oscurecer el fondo */
+    z-index: 9997 !important;
+  }
+}
+
+/* Agregar espacio superior para evitar que el contenido quede tapado por la navbar */
+@media (max-width: 992px) {
+  .service-page,
+  .about-page,
+  .location-page {
+    padding-top: 100px !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Asegurar que los textos de las features estén centrados */
+  .feature-item,
+  .feature-list li,
+  .benefit-list li,
+  .about-section p,
+  .feature-description,
+  .service-description,
+  .about-content p,
+  .service-page p {
+    text-align: center !important;
+  }
+  
+  /* Centrar todos los títulos */
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center !important;
+  }
+}
+
+/* Ajustes para el hero en móvil */
+@media (max-width: 768px) {
+  .hero {
+    margin-top: 120px !important; /* Espacio para el header */
+    height: auto !important;
+    min-height: 600px !important;
+    max-width: 100vw !important;
+    overflow: hidden !important;
+  }
+  
+  /* Contenedor para limitar el ancho del hero */
+  .hero-container {
+    max-width: 100% !important;
+    padding: 0 15px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+  
+  .hero-bg-layer {
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+  
+  /* Asegurar que el título está correctamente centrado */
+  .hero-title {
+    text-align: center !important;
+    width: 100% !important;
+    font-size: 3.5rem !important;
+  }
+  
+  /* Centrar el subtítulo y mejorar su legibilidad */
+  .hero-subtitle {
+    text-align: center !important;
+    width: 100% !important;
+    font-size: 1.8rem !important;
+  }
+  
+  /* Centrar el texto del hero */
+  .hero-text {
+    text-align: center !important;
+    margin: 0 auto 1.5rem !important;
+    max-width: 100% !important;
+  }
+  
+  /* Centrar los botones */
+  .hero-buttons {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    flex-wrap: wrap !important;
+    margin-top: 1.5rem !important;
+  }
+}
+
+/* Reajustar el contenedor móvil para alinear elementos */
+.header-mobile-actions {
+  display: none !important; /* Ocultamos este contenedor ya que reposicionamos los elementos */
+}

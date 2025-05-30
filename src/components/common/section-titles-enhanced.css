@@ -1,0 +1,94 @@
+/* Estilos mejorados para títulos de secciones */
+
+/* Estilo base compartido para todos los títulos de secciones */
+.section-title, 
+.cta-title, 
+.google-reviews-title {
+  font-family: 'Playfair Display', serif !important;
+  position: relative !important;
+  text-align: center !important;
+  margin-bottom: 2.5rem !important;
+  letter-spacing: 0.8px !important;
+  line-height: 1.2 !important;
+  padding-bottom: 1.5rem !important; /* Espacio para el decorador */
+}
+
+/* Efecto decorativo - línea elegante */
+.section-title::after, 
+.cta-title::after, 
+.google-reviews-title::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 80px !important;
+  height: 2px !important;
+  background: linear-gradient(to right, rgba(178, 124, 96, 0.1), rgba(178, 124, 96, 1), rgba(178, 124, 96, 0.1)) !important;
+}
+
+/* Estilizado específico para títulos de secciones regulares */
+.section-title {
+  font-size: 2.8rem !important;
+  font-weight: 700 !important;
+  color: #333 !important;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Estilizado específico para el título de CTA */
+.cta-title {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  color: #fff !important; /* Asumiendo fondo oscuro en CTA */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Estilizado específico para el título de testimonios */
+.google-reviews-title {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  color: #333 !important;
+  letter-spacing: 1px !important;
+  text-transform: none !important; /* Eliminar mayúsculas forzadas */
+}
+
+/* Efecto decorativo adicional para títulos largos (servicios) */
+.section-title[data-component-name="ServicesSection"] {
+  max-width: 80% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  font-size: 2.6rem !important; /* Ligeramente más pequeño para textos largos */
+}
+
+/* Línea decorativa para el título Bienvenidos - adaptativo según dispositivo */
+.section-title[data-component-name="AboutSection"]::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important; /* Alineado al inicio de la palabra en desktop */
+  transform: none !important; /* Sin transformación en desktop */
+  width: 60px !important;
+  height: 3px !important; /* Un poco más gruesa para destacar */
+  background: rgba(178, 124, 96, 0.8) !important; /* Color sólido como en Sebiestetica */
+  z-index: 1 !important;
+}
+
+/* Centrado en dispositivos móviles */
+@media (max-width: 992px) {
+  .section-title[data-component-name="AboutSection"] {
+    text-align: center !important;
+  }
+  
+  .section-title[data-component-name="AboutSection"]::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+}
+
+/* Animación sutil en hover para todos los títulos */
+.section-title:hover, 
+.cta-title:hover, 
+.google-reviews-title:hover {
+  transform: translateY(-2px) !important;
+  transition: transform 0.3s ease !important;
+}

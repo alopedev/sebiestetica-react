@@ -37,48 +37,39 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Lorena Navarro',
-      date: 'Hace 2 meses',
-      content: 'Es la primera vez que vengo y sin duda no será la última. Trato genial, simpática y sincera. Me ha transmitido confianza y profesionalidad. Sin duda volveré!!!!!!',
+      name: 'Helena Gil Castillo',
+      date: 'Hace un año',
+      content: 'Soy clienta habitual y no puedo estar más contenta con el servicio que da Sebi. Profesional y cercana. Siempre quiero volver.',
       rating: 5,
-      initials: 'LN',
-      image: 'https://randomuser.me/api/portraits/women/32.jpg'
+      initials: 'HG',
+      image: null
     },
     {
       id: 2,
-      name: 'Aina Gómez',
-      date: '2025-03-17',
-      content: 'Increíble como siempre, trato excepcional. Super cómoda en todo momento y resultado inmejorable, siempre será mi clínica de confianza.',
+      name: 'Esther Gispert',
+      date: 'Hace un año',
+      content: 'Excelente profesional. Tratamientos de belleza con resultados fabulosos. Trato cercano y cariñoso, te hace sentir como en casa. Recomiento 100X100. Gracias Sebi.',
       rating: 5,
-      initials: 'AG',
-      image: 'https://randomuser.me/api/portraits/women/68.jpg'
+      initials: 'EG',
+      image: null
     },
     {
       id: 3,
-      name: 'Natalia Ramos',
-      date: '2025-02-15',
-      content: 'Una gran profesional, encantada siempre con el resultado y el trato. Súper recomendado!',
+      name: 'Vanessa Sole',
+      date: 'Hace un año',
+      content: 'Grandes profesionales! Gran trato! Y resultados evidentes. Más de 6 años siendo clienta y los q me quedan.',
       rating: 5,
-      initials: 'NR',
-      image: 'https://randomuser.me/api/portraits/women/44.jpg'
+      initials: 'VS',
+      image: null
     },
     {
       id: 4,
-      name: 'Estel Ceballos',
-      date: '2025-01-10',
-      content: 'Fuí por primera vez a Sebiestetica y quedé muy contenta, tanto por el trato y amabilidad como por su profesionalidad. Sebi me dejó unas cejas 10🤩 mi nueva estética de confianza.',
-      rating: 5,
-      initials: 'EC',
-      image: 'https://randomuser.me/api/portraits/men/45.jpg'
-    },
-    {
-      id: 5,
-      name: 'Sheila Díez',
-      date: '2024-06-20',
+      name: 'Sheila Díez Cano',
+      date: 'Hace 11 meses',
       content: 'Mi chico y yo llevamos años haciéndonos las cejas con sebi y nunca he tenido de mejores. Se lo recomiendo a todo el mundo. No podría vivir sin ella, te cambia la cara.',
       rating: 5,
       initials: 'SD',
-      image: 'https://randomuser.me/api/portraits/women/65.jpg'
+      image: null
     }
   ];
 
@@ -155,10 +146,20 @@ const Testimonials = () => {
   const averageRating = 5; // As per the image
   const totalReviews = 951; // As per the image
 
-  // Format date
+  // Format date - usar directamente el texto de la fecha en lugar de formatear
   const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-    return new Date(dateString).toLocaleDateString('es-ES', options).replace(/\//g, '-');
+    // Si la fecha ya está en texto (como "Hace un año"), devolverla directamente
+    if (typeof dateString === 'string' && (dateString.includes('Hace') || dateString.includes('mes') || dateString.includes('año'))) {
+      return dateString;
+    }
+    // De lo contrario, intentar formatearla si es una fecha válida
+    try {
+      const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+      return new Date(dateString).toLocaleDateString('es-ES', options).replace(/\//g, '-');
+    } catch (e) {
+      // En caso de error, devolver la fecha original o un texto predeterminado
+      return dateString || 'Fecha reciente';
+    }
   };
 
   return (

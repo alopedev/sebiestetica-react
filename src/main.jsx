@@ -15,6 +15,9 @@ import './styles/background-fix.css'; // Corrección para unificar colores y mej
 import './styles/layout-fixes.css'; // Corrección para el layout general, formulario y hero
 import './components/social-icons-fix.css'; // Mejoras para los iconos sociales
 import './styles/title-line-fix.css'; // Solución definitiva para las líneas decorativas
+import './components/common/section-titles-enhanced.css'; // Mejoras visuales para títulos de secciones
+import './styles/mobile-fixes.css'; // Soluciones definitivas para dispositivos móviles
+import './styles/mobile-emergency-fixes.css'; // Correcciones de emergencia para móviles
 
 // Configurar FontAwesome
 library.add(faBars, faTimes, faPhone, faArrowDown, faCalendarAlt, faSpinner, faFacebookF, faInstagram);

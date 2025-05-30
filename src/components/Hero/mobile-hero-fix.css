@@ -1,0 +1,144 @@
+/* Correcciones OBLIGATORIAS para el hero en dispositivos móviles */
+
+/* Ajustes generales para el hero en móviles - reglas forzadas */
+@media (max-width: 992px) {
+  .hero {
+    height: auto !important; /* Eliminar altura fija */
+    min-height: 500px !important; 
+    max-height: none !important; /* Eliminar la restricción de altura máxima */
+    margin-top: 80px !important; /* Ajuste para compensar el header */
+    padding: 40px 0 !important; /* Asegurar espacio arriba y abajo */
+    overflow: visible !important; /* Evitar cortes */
+    width: 90% !important; /* Reducido al 90% para dejar espacio en los laterales */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+    border-radius: 15px !important; /* Bordes redondeados */
+  }
+  
+  /* Aseguramos que las imágenes de fondo se muestren correctamente */
+  .hero-bg-layer {
+    background-size: cover !important;
+    background-position: center center !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  /* Ajustes en el título para móviles - reducido */
+  .hero-title {
+    font-size: 3rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  /* Centrar la línea decorativa */
+  .hero-title::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    animation: none !important;
+    width: 60px !important;
+  }
+  
+  /* Ajuste del subtítulo */
+  .hero-subtitle {
+    font-size: 1.5rem !important;
+    margin: 0 auto 1.5rem !important;
+    text-align: center !important;
+    max-width: 100% !important;
+  }
+  
+  /* Ajustes del texto descriptivo */
+  .hero-text {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 1.2rem !important;
+  }
+  
+  /* Centrar los botones */
+  .hero-buttons {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  
+  /* Aseguramos que el contenido no se corte */
+  .hero-content {
+    padding: 0 20px !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+}
+
+/* Ajustes específicos para móviles pequeños */
+@media (max-width: 576px) {
+  .hero {
+    height: auto !important;
+    min-height: 85vh !important;
+    margin-top: 90px !important; /* Header más pequeño */
+    width: 85% !important; /* Aún más estrecho en móviles pequeños */
+  }
+  
+  .hero-title {
+    font-size: 2.4rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem !important;
+  }
+  
+  .hero-text {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Hacer los botones más grandes y más fáciles de tocar */
+  .hero-buttons a {
+    padding: 12px 20px !important;
+    font-size: 1rem !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 10px !important;
+  }
+}
+
+/* Mejoras para las imágenes del fondo sólo en dispositivos móviles */
+@media (max-width: 992px) {
+  .hero-bg {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: -1 !important;
+    overflow: hidden !important;
+  }
+  
+  .hero-bg-layer {
+    transform: scale(1.2) !important;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+}
+
+/* Asegurar que las imágenes de fondo se muestran correctamente sólo en dispositivos móviles */
+@media (max-width: 992px) {
+  .hero-section, .hero-container, .hero-content-wrapper, .hero {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: auto !important;
+    width: 100% !important;
+  }
+  
+  /* Ajuste obligatorio para contenido del hero */
+  .hero-content {
+    padding: 80px 20px !important; /* Aumentar padding vertical para más espacio */
+    position: relative !important;
+    z-index: 5 !important; /* Asegurar que está por encima del fondo */
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}

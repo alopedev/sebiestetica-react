@@ -1,0 +1,106 @@
+/* Mejoras para el Header */
+.header {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Barra superior mejorada */
+.header-top-bar {
+  background: linear-gradient(to right, #b27c60, #c8a08b) !important;
+  padding: 6px 0 !important; /* Reducido de 10px a 6px */
+}
+
+.header-top-bar .social-links a {
+  color: white !important;
+  opacity: 0.9 !important;
+  transition: all 0.3s ease !important;
+}
+
+.header-top-bar .social-links a:hover {
+  opacity: 1 !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Mejora del área principal del header */
+.header-main {
+  background-color: #fff !important;
+  border-bottom: 2px solid rgba(178, 124, 96, 0.1) !important;
+  padding: 5px 0 !important; /* Reducido de 10px a 5px */
+  min-height: auto !important;
+}
+
+/* Mejora del menú de navegación */
+.nav-links .nav-item a {
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  font-size: 1.15rem !important; /* Aumentado como pediste */
+  padding: 6px 12px !important; /* Reducido de 8px 15px */
+  border-radius: 4px !important;
+  line-height: 1.4 !important;
+}
+
+.nav-links .nav-item a:hover {
+  background-color: rgba(178, 124, 96, 0.08) !important;
+  color: #b27c60 !important;
+}
+
+.nav-links .nav-item.active a {
+  color: #b27c60 !important;
+  font-weight: 600 !important;
+  position: relative !important;
+}
+
+.nav-links .nav-item.active a:after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -5px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 30px !important;
+  height: 3px !important;
+  background-color: #b27c60 !important;
+  border-radius: 3px !important;
+}
+
+/* Mejora del botón CTA */
+.nav-cta .btn-primary {
+  background: linear-gradient(to right, #b27c60, #c8a08b) !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(178, 124, 96, 0.3) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.3s ease !important;
+}
+
+.nav-cta .btn-primary:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 20px rgba(178, 124, 96, 0.4) !important;
+}
+
+/* Mejoras solo para los títulos del header */
+.header .nav-links .nav-item a {
+  font-size: 1.15rem !important; /* Ligeramente más grande que antes */
+  font-weight: 600 !important;
+  color: #333 !important;
+  position: relative !important;
+  letter-spacing: 0.3px !important;
+}
+
+/* Mejora solo para el divider de la ubicación */
+.location-divider {
+  height: 4px !important;
+  width: 100px !important;
+  background: linear-gradient(to right, #b27c60, #c8a08b) !important;
+  margin: 0 auto 2rem !important;
+  border-radius: 2px !important;
+}
+
+/* Mejora solo para el subtítulo de ubicación */
+.location-subtitle {
+  text-align: center !important;
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.2rem !important;
+  color: #666 !important;
+  max-width: 700px !important;
+  margin: 0 auto 2.5rem !important;
+  line-height: 1.6 !important;
+}

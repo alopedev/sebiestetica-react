@@ -4,6 +4,7 @@ import { navigateWithTransition } from '../NavigationManager';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faCalendarAlt, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import './Hero.css';
+import './mobile-hero-fix.css'; // Solución para problemas responsive en móviles
 
 // Importar las imágenes
 import imagenEntrada from '../../assets/images/entrada.png';
@@ -85,64 +86,67 @@ const Hero = () => {
   }
 
   return (
-    <section className={`hero ${isTransitioning ? 'transitioning' : ''}`} style={heroStyle}>
-      <div className="hero-bg">
-        <div className="hero-bg-layer current"></div>
-        <div className="hero-bg-layer next"></div>
-      </div>
+    <>
+      {/* Título movido fuera del hero para versión móvil */}
+      <h1 className="mobile-main-title">Sebiestetica</h1>
+      
+      <section className={`hero ${isTransitioning ? 'transitioning' : ''}`} style={heroStyle}>
+        <div className="hero-bg">
+          <div className="hero-bg-layer current"></div>
+          <div className="hero-bg-layer next"></div>
+        </div>
 
-      <div className="container">
-        <div className="hero-content">
-          <h1 className="hero-title">Sebiestetica</h1>
-          <h2 className="hero-subtitle">Tu espacio de belleza y bienestar en Reus</h2>
-          <p className="hero-text">
-            Descubre una experiencia única de cuidado personal donde la belleza se encuentra con la relajación.
-            Nuestros tratamientos profesionales están diseñados para realzar tu belleza natural.
-          </p>
-          <div className="hero-buttons">
-            <a 
-              href="/servicios" 
-              className="btn btn-primary"
-              onClick={(e) => {
-                e.preventDefault();
-                navigateWithTransition('/servicios');
-              }}
-              style={{
-                height: '45px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}
-            >
-              Ver Tratamientos
-            </a>
-            <a 
-              href="/contacto" 
-              className="btn btn-secondary"
-              onClick={(e) => {
-                e.preventDefault();
-                navigateWithTransition('/contacto');
-              }}
-              style={{
-                height: '45px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}
-            >
-              Reserva tu cita
-            </a>
+        <div className="container hero-container">
+          <div className="hero-content">
+            <h1 className="hero-title desktop-only">Sebiestetica</h1>
+            <h2 className="hero-subtitle">Tu espacio de belleza y bienestar en Reus</h2>
+            <p className="hero-text">
+              Descubre una experiencia única de cuidado personal donde la belleza se encuentra con la relajación.
+              Nuestros tratamientos profesionales están diseñados para realzar tu belleza natural.
+            </p>
+            <div className="hero-buttons">
+              <a 
+                href="/servicios" 
+                className="btn btn-primary"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateWithTransition('/servicios');
+                }}
+                style={{
+                  height: '45px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                Ver Tratamientos
+              </a>
+              <a 
+                href="/ubicacion" 
+                className="btn btn-secondary"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateWithTransition('/ubicacion');
+                }}
+                style={{
+                  height: '45px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+                data-component-name="Hero"
+              >
+                Contáctanos
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="hero-overlay"></div>
+        <div className="hero-overlay"></div>
 
-      <div className="hero-scroll">
-        <span>Desliza para descubrir</span>
-        <FontAwesomeIcon icon={faArrowDown} className="scroll-icon" />
-      </div>
-    </section>
+        {/* Elemento 'Desliza para descubrir' eliminado por solicitud del cliente */}
+      </section>
+    </>
   );
 };
 

@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { navigateWithTransition } from '../NavigationManager';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
+// Eliminado el menú móvil como solicitado por el cliente
 import './Header.css';
+import './header-enhanced.css'; // Mejoras visuales para el header
+import './mobile-header-fix.css'; // Solución para problemas responsive en móviles
 
 const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,9 +38,8 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''} ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
-      {/* Barra superior: social y teléfono directamente en header-top-bar para simplificar */}
+      {/* Barra superior: social y teléfono */}
       <div className="header-top-bar">
-        {/* Ya no se usa .header-top-bar-layout-container ni .header-top-bar-content aquí para simplificar */}
         {/* Los social-links serán un hijo directo y se posicionarán con flexbox desde el padre */}
         <div className="social-links">
           <a href="https://www.facebook.com/SebiEstetica/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -49,94 +51,79 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
           <a href="tel:+34977333869" className="phone-link" aria-label="Llamar">
             <FontAwesomeIcon icon={faPhone} />
           </a>
+          {/* Icono de mapa en la barra social para móvil */}
+          <a 
+            href="/ubicacion" 
+            className="map-link mobile-location-btn"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateWithTransition('/ubicacion');
+            }}
+            aria-label="¿Dónde estamos?"
+          >
+            <FontAwesomeIcon icon={faMapMarkerAlt} />
+          </a>
         </div>
       </div>
+      
       {/* Zona principal: logo y menú en container */}
       <div className="header-main">
         <div className="container">
+          {/* Logo */}
           <div className="header-logo">
             <Link to="/" aria-label="Inicio">
               {/* Logotipo sin texto, solo para mantener la estructura del enlace */}
             </Link>
           </div>
-          <nav className={`main-nav ${isMobileMenuOpen ? 'active' : ''}`}>
+          
+          {/* Botón hamburguesa eliminado para versión móvil */}
+          
+          {/* Menú de navegación - visible solo en desktop */}
+          <nav className="main-nav desktop-only">
             <ul className="nav-links">
               <li className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}>
-                <a 
-                  href="/"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigateWithTransition('/');
-                  }}
-                >Inicio</a>
+                <Link to="/" onClick={() => navigateWithTransition('/')}>Inicio</Link>
               </li>
               <li className={`nav-item ${location.pathname === '/sobre-nosotros' ? 'active' : ''}`}>
-                <a 
-                  href="/sobre-nosotros"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigateWithTransition('/sobre-nosotros');
-                  }}
-                >Nosotros</a>
+                <Link to="/sobre-nosotros" onClick={() => navigateWithTransition('/sobre-nosotros')}>Nosotros</Link>
               </li>
               <li className={`nav-item ${location.pathname === '/servicios' ? 'active' : ''}`}>
-                <a 
-                  href="/servicios"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigateWithTransition('/servicios');
-                  }}
-                >Servicios</a>
-              </li>
-              <li className={`nav-item ${location.pathname === '/contacto' ? 'active' : ''}`}>
-                <a 
-                  href="/contacto"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigateWithTransition('/contacto');
-                  }}
-                >Contacto</a>
+                <Link to="/servicios" onClick={() => navigateWithTransition('/servicios')}>Servicios</Link>
               </li>
             </ul>
-            <div className="nav-cta">
-              <a 
-                href="/ubicacion" 
-                className="btn btn-primary"
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigateWithTransition('/ubicacion');
-                }}
-                style={{
-                  height: '45px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}
-              >¿Dónde estamos?</a>
-            </div>
-
-            <button
-              className="mobile-menu-toggle"
-              onClick={toggleMobileMenu}
-              aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
-            >
-              {isMobileMenuOpen ? (
-                <FontAwesomeIcon icon={faTimes} />
-              ) : (
-                <FontAwesomeIcon icon={faBars} />
-              )}
-            </button>
           </nav>
+          
+          {/* Botón "Dónde estamos" con dos versiones: texto para desktop, icono para móvil */}
+          <a 
+            href="/ubicacion" 
+            className="btn btn-primary desktop-location-btn"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateWithTransition('/ubicacion');
+            }}
+            style={{
+              height: '38px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '0 15px',
+              borderRadius: '5px',
+              backgroundColor: 'rgba(178, 124, 96, 0.9)',
+              color: 'white',
+              textDecoration: 'none',
+              fontWeight: 'bold',
+              fontSize: '14px',
+              marginLeft: 'auto', /* En desktop, lo coloca a la derecha */
+              minWidth: '180px', /* Ancho mínimo para asegurar texto en una sola línea */
+              whiteSpace: 'nowrap' /* Evita que el texto se divida en varias líneas */
+            }}
+          >¿Dónde estamos?</a>
+          
+          {/* Botón de mapa para móvil ahora movido a la barra social */}
         </div>
       </div>
 
-      {/* Overlay para el menú móvil */}
-      {isMobileMenuOpen && (
-        <div
-          className="mobile-menu-overlay"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
-      )}
+      {/* Menú móvil eliminado por completo como solicitó el cliente */}
     </header>
   );
 };

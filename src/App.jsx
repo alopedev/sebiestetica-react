@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import ScrollFix from './components/ScrollFix';
 import PageTransition from './components/PageTransition';
 import NavigationManager from './components/NavigationManager';
+import TopTouchScroll from './components/TopTouchScroll'; // Importar el componente de scroll al tocar
 import './App.css';
 import './components/button-fix.css'; // Corrección para el botón de contacto
 import './components/performance-fixes.css'; // Optimizaciones de rendimiento
@@ -73,35 +74,7 @@ function Services() {
 
 // Se ha reemplazado por el componente ScrollFix
 
-function Contact() {
-  // Asegurar scroll al inicio en la sección Contacto
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  return (
-    <div className="page-container">
-      <h1 className="page-title">Contacto</h1>
-      <div className="contact-form">
-        <form>
-          <div className="form-group">
-            <label htmlFor="name">Nombre</label>
-            <input type="text" id="name" name="name" placeholder="Tu nombre" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Tu email" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Mensaje</label>
-            <textarea id="message" name="message" placeholder="¿En qué podemos ayudarte?"></textarea>
-          </div>
-          <button type="submit" className="btn-primary">Enviar Mensaje</button>
-        </form>
-      </div>
-    </div>
-  );
-}
+// La función Contact ha sido eliminada ya que la dueña del negocio no utiliza el correo electrónico
 
 function App() {
   // Estado para controlar el menú móvil
@@ -118,6 +91,9 @@ function App() {
       {/* Componente mejorado que asegura el scroll al inicio en cada navegación */}
       <ScrollFix />
       
+      {/* Componente para permitir scroll al tocar la parte superior en móviles */}
+      <TopTouchScroll />
+      
       {/* Header con props correctas */}
       <Header
         isMobileMenuOpen={isMobileMenuOpen}
@@ -129,7 +105,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/sobre-nosotros" element={<About />} />
           <Route path="/servicios" element={<Services />} />
-          <Route path="/contacto" element={<Contact />} />
+          {/* Ruta de contacto eliminada */}
           
           {/* Rutas para servicios individuales */}
           <Route path="/servicios/microblading" element={<Microblading />} />

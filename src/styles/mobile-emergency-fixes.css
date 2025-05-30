@@ -1,0 +1,187 @@
+/* Correcciones de emergencia para móviles */
+
+/* Estilos para el título principal móvil fuera del hero */
+.mobile-main-title {
+  display: none;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 3.8rem; /* Aumentado aún más el tamaño del título */
+  margin: 70px 0 70px 0; /* Aumentado más los márgenes para bajarlo */
+  color: #6d4c41; /* Color marrón más oscuro para mejor contraste */
+  padding: 0 10px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.15); /* Sombra más pronunciada */
+  letter-spacing: 2px; /* Espaciado entre letras para elegancia */
+  transform: scale(1.02); /* Ligero aumento de tamaño */
+  position: relative; /* Para añadir elementos decorativos */
+}
+
+/* Añadir decoración al título */
+.mobile-main-title::before,
+.mobile-main-title::after {
+  content: '';
+  display: block;
+  width: 150px;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #b28269, transparent);
+  margin: 10px auto;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.mobile-main-title::before {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+/* Ocultar el menú de navegación original en móviles para evitar duplicados */
+@media (max-width: 992px) {
+  .main-nav.desktop-only,
+  .hero-title.desktop-only {
+    display: none !important;
+  }
+  
+  .mobile-main-title {
+    display: block !important;
+  }
+}
+
+/* Aplicar reducción de ancho a todos los elementos principales en móviles */
+@media (max-width: 992px) {
+  .hero {
+    width: 96% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+    max-width: 96vw !important;
+    box-sizing: border-box !important;
+    left: 0 !important;
+    right: 0 !important;
+    position: relative !important;
+    transform: none !important;
+  }
+  
+  .hero-bg-layer,
+  .hero-bg {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 15px !important;
+    overflow: hidden !important;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+    max-width: 90% !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.7rem !important; /* Aumentado tamaño del subtítulo */
+    text-align: center !important;
+    max-width: 90% !important;
+    font-weight: 600 !important;
+    margin-bottom: 1.5rem !important;
+    font-style: italic !important;
+    color: #d0b49f !important; /* Color más claro para mayor visibilidad */
+  }
+  
+  .hero-text {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    max-width: 90% !important;
+  }
+  
+  .hero-content {
+    max-width: 90% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+  
+  /* Aplicar el mismo estilo a la sección de bienvenida */
+  .welcome-section,
+  .welcome-section .container,
+  .about-section,
+  .about-section .container {
+    width: 96% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 96vw !important;
+    border-radius: 15px !important;
+    overflow: hidden !important;
+  }
+  
+  /* Ajustar las tarjetas de tratamientos */
+  .services-section,
+  .services-section .container,
+  .services-grid,
+  .service-card {
+    width: 96% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 96vw !important;
+  }
+  
+  .service-card {
+    border-radius: 15px !important;
+    overflow: hidden !important;
+    margin-bottom: 25px !important;
+  }
+  
+  /* Reducir la sección 'Quieres lucir radiante' */
+  .cta-section,
+  .cta-section .container,
+  .cta-content {
+    width: 96% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 96vw !important;
+    border-radius: 15px !important;
+    overflow: hidden !important;
+  }
+  
+  /* Ajustar textos y espaciados dentro de los contenedores reducidos */
+  .section-title,
+  .section-subtitle,
+  .welcome-text,
+  .about-text,
+  .service-card-title,
+  .service-card-description,
+  .cta-title,
+  .cta-text {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    text-align: center !important;
+  }
+  
+  /* Hacer que las imágenes se ajusten correctamente */
+  .welcome-image,
+  .service-card-image,
+  .cta-image {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+  
+  /* Reducir el radio del borde para un aspecto más elegante */
+  .hero,
+  .welcome-section,
+  .welcome-section .container,
+  .about-section,
+  .about-section .container,
+  .services-section,
+  .services-section .container,
+  .service-card,
+  .cta-section,
+  .cta-section .container,
+  .cta-content {
+    border-radius: 10px !important;
+  }
+}
