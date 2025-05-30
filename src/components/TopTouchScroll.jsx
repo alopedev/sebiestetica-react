@@ -1,60 +1,60 @@
 import React, { useEffect } from 'react';
 
+/**
+ * Componente que permite hacer scroll hacia arriba al tocar la parte superior de la pantalla.
+ * El enfoque simplificado modifica directamente el header para darle la funcionalidad.
+ */
 const TopTouchScroll = () => {
   useEffect(() => {
-    // Altura del área de toque en la parte superior
-    const touchAreaHeight = 150; // píxeles
-    
-    // Función para hacer scroll suave hacia arriba
-    const scrollToTop = () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    };
-    
-    // Crear un área de toque en la parte superior de la pantalla
-    const touchArea = document.createElement('div');
-    touchArea.id = 'top-touch-area';
-    touchArea.style.position = 'fixed';
-    touchArea.style.top = '0';
-    touchArea.style.left = '0';
-    touchArea.style.width = '100%';
-    touchArea.style.height = touchAreaHeight + 'px';
-    touchArea.style.zIndex = '9999';
-    touchArea.style.cursor = 'pointer';
-    
-    // Hacer el área totalmente transparente pero clickeable
-    touchArea.style.opacity = '0';
-    
-    // Añadir el evento de toque
-    const handleTouch = (event) => {
-      // Prevenir comportamiento predeterminado
-      event.preventDefault();
+    // Esperar a que el DOM esté completamente cargado
+    const setupHeaderScrollToTop = () => {
+      // Buscar el elemento header existente
+      const headerElement = document.querySelector('.header-top-bar');
       
-      // Comprobar si el toque es en la parte superior
-      if (event.touches && event.touches.length > 0) {
-        const touchY = event.touches[0].clientY;
-        if (touchY <= touchAreaHeight) {
+      if (headerElement) {
+        console.log('Header encontrado, añadiendo funcionalidad de scroll');
+        
+        // Función para hacer scroll suave hacia arriba
+        const scrollToTop = () => {
+          console.log('Ejecutando scroll hacia arriba');
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        };
+        
+        // Agregar un indicador visual sutil (opcional)
+        headerElement.style.cursor = 'pointer';
+        
+        // Añadir eventos directamente al header
+        headerElement.addEventListener('click', scrollToTop);
+        headerElement.addEventListener('touchstart', (e) => {
+          // No prevenimos el comportamiento predeterminado para permitir
+          // que los enlaces dentro del header sigan funcionando
           scrollToTop();
-        }
+        });
+        
+        console.log('Eventos de scroll añadidos al header');
+      } else {
+        console.error('No se encontró el elemento header');
       }
     };
     
-    // Añadir el evento de clic para compatibilidad con navegadores de escritorio
-    touchArea.addEventListener('click', scrollToTop);
-    touchArea.addEventListener('touchstart', handleTouch);
-    
-    // Añadir el área de toque al body
-    document.body.appendChild(touchArea);
+    // Asegurar que el DOM esté listo
+    if (document.readyState === 'complete') {
+      setupHeaderScrollToTop();
+    } else {
+      window.addEventListener('load', setupHeaderScrollToTop);
+    }
     
     // Limpieza al desmontar
     return () => {
-      touchArea.removeEventListener('click', scrollToTop);
-      touchArea.removeEventListener('touchstart', handleTouch);
-      if (document.body.contains(touchArea)) {
-        document.body.removeChild(touchArea);
+      const headerElement = document.querySelector('.header-top-bar');
+      if (headerElement) {
+        headerElement.removeEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+        headerElement.removeEventListener('touchstart', () => window.scrollTo({top: 0, behavior: 'smooth'}));
       }
+      window.removeEventListener('load', setupHeaderScrollToTop);
     };
   }, []);
   

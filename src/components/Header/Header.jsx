@@ -42,24 +42,56 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
       <div className="header-top-bar">
         {/* Los social-links serán un hijo directo y se posicionarán con flexbox desde el padre */}
         <div className="social-links">
-          <a href="https://www.facebook.com/SebiEstetica/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          {/* Enlaces directos para asegurar su funcionamiento */}
+          <a 
+            href="https://www.facebook.com/SebiEstetica/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Facebook"
+            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px' }}
+            onClick={(e) => {
+              // Mantener el evento predeterminado para abrir el enlace
+              console.log('Facebook clic');
+            }}
+          >
             <FontAwesomeIcon icon={faFacebookF} />
           </a>
-          <a href="https://www.instagram.com/sebi.estetica/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a 
+            href="https://www.instagram.com/sebi.estetica/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Instagram"
+            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px' }}
+            onClick={(e) => {
+              // Mantener el evento predeterminado para abrir el enlace
+              console.log('Instagram clic');
+            }}
+          >
             <FontAwesomeIcon icon={faInstagram} />
           </a>
-          <a href="tel:+34977333869" className="phone-link" aria-label="Llamar">
+          <a 
+            href="tel:+34977333869" 
+            className="phone-link" 
+            aria-label="Llamar"
+            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px' }}
+            onClick={(e) => {
+              // Mantener el evento predeterminado para la llamada telefónica
+              console.log('Teléfono clic');
+            }}
+          >
             <FontAwesomeIcon icon={faPhone} />
           </a>
           {/* Icono de mapa en la barra social para móvil */}
           <a 
             href="/ubicacion" 
             className="map-link mobile-location-btn"
+            aria-label="¿Dónde estamos?"
+            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px' }}
             onClick={(e) => {
               e.preventDefault();
+              console.log('Ubicación clic');
               navigateWithTransition('/ubicacion');
             }}
-            aria-label="¿Dónde estamos?"
           >
             <FontAwesomeIcon icon={faMapMarkerAlt} />
           </a>
