@@ -4,16 +4,20 @@
 .mobile-main-title {
   display: none;
   text-align: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 3.8rem; /* Aumentado aún más el tamaño del título */
-  margin: 70px 0 70px 0; /* Aumentado más los márgenes para bajarlo */
-  color: #6d4c41; /* Color marrón más oscuro para mejor contraste */
-  padding: 0 10px;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.15); /* Sombra más pronunciada */
-  letter-spacing: 2px; /* Espaciado entre letras para elegancia */
-  transform: scale(1.02); /* Ligero aumento de tamaño */
-  position: relative; /* Para añadir elementos decorativos */
+  font-family: 'Cooper Black', 'Arial Black', cursive; /* Usando Cooper Black instalada en el sistema */
+  font-size: 3.2rem; /* Tamaño ajustado para asegurar que quepa en móvil */
+  margin: 60px 0 60px 0; /* Márgenes ajustados */
+  color: #000000; /* Negro como solicitó el usuario */
+  padding: 0 5px;
+  font-weight: normal; /* Cooper Black ya es bold por defecto */
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  position: relative;
 }
 
 /* Añadir decoración al título */
