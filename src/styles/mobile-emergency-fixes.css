@@ -4,7 +4,7 @@
 .mobile-main-title {
   display: none;
   text-align: center;
-  font-family: 'Cooper Black', 'Arial Black', cursive; /* Usando Cooper Black instalada en el sistema */
+  font-family: 'Playfair Display', serif !important; /* Volviendo a la fuente original del sitio */
   font-size: 3.2rem; /* Tamaño ajustado para asegurar que quepa en móvil */
   margin: 60px 0 60px 0; /* Márgenes ajustados */
   color: #000000; /* Negro como solicitó el usuario */
