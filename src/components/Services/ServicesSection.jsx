@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { navigateWithTransition } from '../NavigationManager';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faPencilAlt, faEye, faMagic, faSpa, faGraduationCap, faPaintBrush } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faPencilAlt, faEye, faMagic, faSpa, faGraduationCap, faPaintBrush, faSyringe, faHandSparkles } from '@fortawesome/free-solid-svg-icons';
 import './ServicesSection.css';
 import './service-links-fix.css'; // Corrección para los enlaces "Saber más"
 import './button-height-fix.css'; // Corrección para la altura del botón CTA
@@ -46,6 +46,18 @@ const ServicesSection = () => {
       title: 'Tinte de cejas y pestañas',
       description: 'Dale color y definición a tus cejas y pestañas para lucir una mirada intensa sin necesidad de maquillaje.',
       link: '/servicios/tinte-cejas-pestanas'
+    },
+    {
+      icon: faSyringe,
+      title: 'Terapia de inducción de colágeno',
+      description: 'Tratamiento avanzado que estimula la renovación celular y la producción de colágeno para una piel más firme y rejuvenecida.',
+      link: '/servicios/terapia-induccion-colageno'
+    },
+    {
+      icon: faHandSparkles,
+      title: 'Manicura',
+      description: 'Cuidado completo para tus manos y uñas con técnicas profesionales y los mejores productos para un acabado perfecto y duradero.',
+      link: '/servicios/manicura'
     }
   ];
 

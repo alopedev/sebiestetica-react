@@ -1,0 +1,157 @@
+/* Estilos para sobreescribir las limitaciones de ancho globales */
+.location-page .container,
+.location-page > .container,
+.location-page div.container {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.location-content {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Forzar ancho completo para el mapa y añadir efectos visuales */
+.map-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+  overflow: hidden !important;
+  position: relative !important;
+  z-index: 1 !important;
+  border: 8px solid white !important;
+  margin-bottom: 30px !important;
+}
+
+.map-container::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(rgba(178, 124, 96, 0.05), rgba(178, 124, 96, 0.01)) !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+/* Ajustar la visualización de las tarjetas de información */
+.location-info {
+  grid-template-columns: repeat(2, 1fr) !important;
+  width: 100% !important;
+  gap: 30px !important;
+}
+
+/* Estilo común para todas las tarjetas de información */
+.info-card {
+  background-color: #f8f3ef !important;
+  border-left: 4px solid #b27c60 !important;
+  padding: 30px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.info-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+.info-icon {
+  color: #b27c60 !important;
+  font-size: 1.8rem !important;
+  background-color: rgba(178, 124, 96, 0.1) !important;
+  height: 50px !important;
+  width: 50px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  margin-right: 20px !important;
+}
+
+.info-details h3 {
+  color: #b27c60 !important;
+  font-size: 1.4rem !important;
+  margin-bottom: 15px !important;
+  border-bottom: 1px solid #e0d0c6 !important;
+  padding-bottom: 8px !important;
+}
+
+.info-details p {
+  color: #666 !important;
+  line-height: 1.6 !important;
+  margin-bottom: 5px !important;
+}
+
+.info-details a {
+  color: #b27c60 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  transition: color 0.2s ease !important;
+}
+
+.info-details a:hover {
+  color: #8a5a43 !important;
+  text-decoration: underline !important;
+}
+
+/* Mejorar el aspecto de la tarjeta de horario */
+.info-card[style*="grid-column"] {
+  margin-top: 10px !important;
+  grid-column: 1 / -1 !important;
+}
+
+/* Estilizar el título de horario */
+.info-card[style*="grid-column"] .info-details h3 {
+  font-size: 1.6rem !important;
+  margin-bottom: 20px !important;
+  text-align: center !important;
+}
+
+/* Mejorar la visualización de la agenda de horarios */
+.schedule {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)) !important;
+  gap: 15px !important;
+  margin-top: 15px !important;
+}
+
+.schedule-row {
+  background-color: #fff !important;
+  padding: 12px 20px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05) !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.schedule-row:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.day {
+  font-weight: 600 !important;
+  color: #b27c60 !important;
+  font-size: 1.05rem !important;
+}
+
+.hours {
+  font-weight: 500 !important;
+  color: #666 !important;
+}
+
+/* Estilo para pantallas móviles */
+@media (max-width: 768px) {
+  .location-info {
+    grid-template-columns: 1fr !important;
+  }
+}

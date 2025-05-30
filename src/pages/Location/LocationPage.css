@@ -1,0 +1,149 @@
+.location-page {
+  padding-top: 120px;
+  background-color: #fdf9f6;
+}
+
+.location-page .container {
+  max-width: 100% !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  width: 100% !important;
+}
+
+.location-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.location-title {
+  font-size: 2.5rem;
+  color: #b27c60;
+  font-family: 'Playfair Display', serif;
+}
+
+.location-subtitle {
+  font-family: 'Playfair Display', serif;
+}
+
+.location-divider {
+  height: 3px;
+  width: 80px;
+  background-color: #b27c60;
+  margin: 15px auto 20px;
+}
+
+.location-content {
+  width: 100% !important;
+}
+
+/* Fuerza que todos los elementos internos sean anchos */
+.map-container {
+  width: 100% !important;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.map-container iframe {
+  width: 100% !important;
+  height: 100%;
+}
+
+/* Estilo para las tarjetas de información */
+.location-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.info-card {
+  display: flex;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.info-icon {
+  color: #b27c60;
+  font-size: 1.8rem;
+  margin-right: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.info-details {
+  flex: 1;
+}
+
+.info-details h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.info-details p {
+  font-family: 'Playfair Display', serif;
+  color: #666;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.info-details a {
+  color: #b27c60;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+}
+
+.schedule {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+}
+
+.schedule-row {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-family: 'Playfair Display', serif;
+}
+
+.day {
+  font-weight: 500;
+  min-width: 100px;
+  font-family: 'Playfair Display', serif;
+}
+
+.hours {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Override de los estilos de bootstrap o cualquier framework que esté limitando el ancho */
+.location-page .container,
+.location-page .container-fluid {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
+@media (max-width: 768px) {
+  .location-page {
+    padding-top: 100px;
+  }
+  
+  .info-card {
+    flex-direction: column;
+  }
+  
+  .info-icon {
+    margin-right: 0;
+    margin-bottom: 15px;
+    justify-content: center;
+  }
+}

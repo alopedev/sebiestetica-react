@@ -100,11 +100,11 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
             </ul>
             <div className="nav-cta">
               <a 
-                href="/contacto" 
+                href="/ubicacion" 
                 className="btn btn-primary"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigateWithTransition('/contacto');
+                  navigateWithTransition('/ubicacion');
                 }}
                 style={{
                   height: '45px',
@@ -112,7 +112,7 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                   alignItems: 'center',
                   justifyContent: 'center'
                 }}
-              >Reserva Ahora</a>
+              >¿Dónde estamos?</a>
             </div>
 
             <button

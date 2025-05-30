@@ -37,47 +37,47 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Olga Melguizo',
-      date: '2025-04-21',
-      content: 'Increíble experiencia en Sebiestetica. El personal es muy profesional y los tratamientos son de primera calidad. ¡Mi piel nunca había estado tan radiante!',
+      name: 'Lorena Navarro',
+      date: 'Hace 2 meses',
+      content: 'Es la primera vez que vengo y sin duda no será la última. Trato genial, simpática y sincera. Me ha transmitido confianza y profesionalidad. Sin duda volveré!!!!!!',
       rating: 5,
-      initials: 'OM',
+      initials: 'LN',
       image: 'https://randomuser.me/api/portraits/women/32.jpg'
     },
     {
       id: 2,
-      name: 'Ana C',
-      date: '2025-04-17',
-      content: 'Quedé muy satisfecha con el servicio. Me realizaron un tratamiento facial personalizado y los resultados fueron visibles desde la primera sesión. Totalmente recomendable.',
+      name: 'Aina Gómez',
+      date: '2025-03-17',
+      content: 'Increíble como siempre, trato excepcional. Super cómoda en todo momento y resultado inmejorable, siempre será mi clínica de confianza.',
       rating: 5,
-      initials: 'AC',
+      initials: 'AG',
       image: 'https://randomuser.me/api/portraits/women/68.jpg'
     },
     {
       id: 3,
-      name: 'María G.',
-      date: '2025-04-15',
-      content: 'El mejor centro de estética al que he ido. La atención es excepcional y los resultados siempre superan mis expectativas. No voy a ningún otro sitio.',
+      name: 'Natalia Ramos',
+      date: '2025-02-15',
+      content: 'Una gran profesional, encantada siempre con el resultado y el trato. Súper recomendado!',
       rating: 5,
-      initials: 'MG',
+      initials: 'NR',
       image: 'https://randomuser.me/api/portraits/women/44.jpg'
     },
     {
       id: 4,
-      name: 'Carlos M.',
-      date: '2025-04-10',
-      content: 'Gran profesionalismo y atención personalizada. Los resultados han superado mis expectativas. Sin duda, volveré por más tratamientos.',
+      name: 'Estel Ceballos',
+      date: '2025-01-10',
+      content: 'Fuí por primera vez a Sebiestetica y quedé muy contenta, tanto por el trato y amabilidad como por su profesionalidad. Sebi me dejó unas cejas 10🤩 mi nueva estética de confianza.',
       rating: 5,
-      initials: 'CM',
+      initials: 'EC',
       image: 'https://randomuser.me/api/portraits/men/45.jpg'
     },
     {
       id: 5,
-      name: 'Laura T.',
-      date: '2025-04-05',
-      content: 'Increíble experiencia desde el primer momento. El personal es muy atento y los tratamientos son de primera calidad. ¡Altamente recomendado!',
+      name: 'Sheila Díez',
+      date: '2024-06-20',
+      content: 'Mi chico y yo llevamos años haciéndonos las cejas con sebi y nunca he tenido de mejores. Se lo recomiendo a todo el mundo. No podría vivir sin ella, te cambia la cara.',
       rating: 5,
-      initials: 'LT',
+      initials: 'SD',
       image: 'https://randomuser.me/api/portraits/women/65.jpg'
     }
   ];

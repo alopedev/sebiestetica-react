@@ -23,6 +23,9 @@ import Micropuncion from './pages/Services/Micropuncion';
 import EscuelaMaquillaje from './pages/Services/EscuelaMaquillaje';
 import DisenoCejas from './pages/Services/DisenoCejas';
 import TinteCejasPestanas from './pages/Services/TinteCejasPestanas';
+import TerapiaInduccionColageno from './pages/Services/TerapiaInduccionColageno';
+import Manicura from './pages/Services/Manicura';
+import LocationPage from './pages/Location/LocationPage';
 
 
 
@@ -135,6 +138,9 @@ function App() {
           <Route path="/servicios/escuela-maquillaje" element={<EscuelaMaquillaje />} />
           <Route path="/servicios/diseno-cejas" element={<DisenoCejas />} />
           <Route path="/servicios/tinte-cejas-pestanas" element={<TinteCejasPestanas />} />
+          <Route path="/servicios/terapia-induccion-colageno" element={<TerapiaInduccionColageno />} />
+          <Route path="/servicios/manicura" element={<Manicura />} />
+          <Route path="/ubicacion" element={<LocationPage />} />
         </Routes>
       </main>
 
