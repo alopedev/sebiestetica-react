@@ -5,7 +5,7 @@
   display: none;
   text-align: center;
   font-family: 'Playfair Display', serif !important; /* Volviendo a la fuente original del sitio */
-  font-size: 3.2rem; /* Tamaño ajustado para asegurar que quepa en móvil */
+  font-size: 3.8rem; /* Aumentado tamaño para diferenciarlo como h1 */
   margin: 90px 0 90px 0; /* Aumentado margen para bajar más el título */
   color: #000000; /* Negro como solicitó el usuario */
   padding: 0 5px;
@@ -18,6 +18,34 @@
   -ms-hyphens: auto;
   hyphens: auto;
   position: relative;
+}
+
+/* Estilos para los títulos Bienvenidos en móvil y desktop */
+.desktop-welcome-title {
+  display: block;
+}
+
+.mobile-welcome-title {
+  display: none;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .desktop-welcome-title {
+    display: none !important;
+  }
+  
+  .mobile-welcome-title {
+    display: block !important;
+    margin-bottom: 25px !important;
+  }
+  
+  .mobile-welcome-title .section-title {
+    margin-bottom: 10px !important;
+    font-size: 2.5rem !important;
+    font-weight: bold !important;
+  }
 }
 
 /* Añadir decoración al título */

@@ -27,6 +27,11 @@ const AboutSection = () => {
   return (
     <section className="about-section">
       <div className="container">
+        {/* Título Bienvenidos movido encima de la imagen, oculto en desktop y visible en móvil */}
+        <div className="section-header mobile-welcome-title">
+          <h2 className="section-title" data-component-name="AboutSection">Bienvenidos</h2>
+        </div>
+        
         <div className="about-grid">
           <div className="about-image">
             <img
@@ -47,8 +52,8 @@ const AboutSection = () => {
           </div>
 
           <div className="about-content">
-            <div className="section-header">
-              <h2 className="section-title">Bienvenidos</h2>
+            <div className="section-header desktop-welcome-title">
+              <h2 className="section-title" data-component-name="AboutSection">Bienvenidos</h2>
               <div className="section-divider"></div>
               <p className="section-description" style={{ fontFamily: "'Playfair Display', serif" }}>
                 En Sebiestetica nos dedicamos a realzar tu belleza natural a través de tratamientos personalizados y de la más alta calidad. Nuestro objetivo es ofrecerte una experiencia única de relajación y bienestar.
