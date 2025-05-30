@@ -6,10 +6,10 @@
   text-align: center;
   font-family: 'Playfair Display', serif !important; /* Volviendo a la fuente original del sitio */
   font-size: 3.2rem; /* Tamaño ajustado para asegurar que quepa en móvil */
-  margin: 60px 0 60px 0; /* Márgenes ajustados */
+  margin: 90px 0 90px 0; /* Aumentado margen para bajar más el título */
   color: #000000; /* Negro como solicitó el usuario */
   padding: 0 5px;
-  font-weight: normal; /* Cooper Black ya es bold por defecto */
+  font-weight: 900; /* Fuente extra bold para que se vea más gruesa */
   width: 100%;
   max-width: 100%;
   overflow-wrap: break-word;
