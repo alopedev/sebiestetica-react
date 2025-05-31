@@ -7,7 +7,7 @@
   font-size: 0.9rem;
   padding: 0.25rem 0;
   font-weight: 500;
-  position: fixed;
+  /* position: fixed; */ /* Temporarily commented for diagnostics */
   top: 0;
   left: 0;
   right: 0;
@@ -32,6 +32,18 @@
   gap: 0.8rem; /* Espacio entre iconos, ajusta si es necesario */
   margin: 0; /* Aseguramos que no haya márgenes extraños */
   padding: 0; /* Aseguramos que no haya paddings extraños */
+}
+
+@media (max-width: 768px) {
+  .header-top-bar .social-links {
+    display: flex !important;
+    justify-content: center !important;
+    padding: 8px 0 !important;
+  }
+  
+  .header-top-bar .social-links a {
+    margin: 0 10px !important;
+  }
 }
 
 /* Estilos para los íconos individuales dentro de .social-links */

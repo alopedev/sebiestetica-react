@@ -9,12 +9,11 @@ import App from './App';
 
 // Importar estilos globales
 import './index.css';
+import './styles/migrated-inline-styles.css';
 import './styles/colors.css';
 import './styles/global.css';
 import './styles/background-fix.css'; // Corrección para unificar colores y mejorar formulario
 import './styles/layout-fixes.css'; // Corrección para el layout general, formulario y hero
-import './components/social-icons-fix.css'; // Mejoras para los iconos sociales
-import './styles/title-line-fix.css'; // Solución definitiva para las líneas decorativas
 import './components/common/section-titles-enhanced.css'; // Mejoras visuales para títulos de secciones
 import './styles/mobile-fixes.css'; // Soluciones definitivas para dispositivos móviles
 import './styles/mobile-emergency-fixes.css'; // Correcciones de emergencia para móviles

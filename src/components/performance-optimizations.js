@@ -22,8 +22,8 @@ export function applyPerformanceOptimizations() {
  */
 function preloadCriticalImages() {
   const criticalImages = [
-    '/src/assets/images/entrada.png',
-    '/src/assets/images/handsOn.png'
+    '/src/assets/images/entrada.webp',
+    '/src/assets/images/handsOn.webp'
   ];
   
   criticalImages.forEach(imageSrc => {

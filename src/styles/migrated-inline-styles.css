@@ -1,0 +1,43 @@
+body {
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #fff8f0;
+  scroll-behavior: auto !important;
+}
+
+/* Solución definitiva para el problema de scroll */
+html,
+body {
+  /* overflow-x: hidden; */ /* Temporarily commented for tap-to-top diagnostics */
+  scroll-padding-top: 120px;
+}
+.banner {
+  padding: 30px;
+  text-align: center;
+  background-color: #fff;
+  margin: 30px auto;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  font-family: "Playfair Display", serif;
+  color: #8b5a2b;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.note {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: left;
+}

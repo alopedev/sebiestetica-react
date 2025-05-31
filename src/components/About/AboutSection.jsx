@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faAward, faUsers, faSmile } from '@fortawesome/free-solid-svg-icons';
-import aboutImage from '../../assets/images/handsOn.png';
+import aboutImage from '../../assets/images/handsOn.webp';
 import './AboutSection.css';
 
 const AboutSection = () => {
