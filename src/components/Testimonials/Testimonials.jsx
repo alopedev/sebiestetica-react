@@ -4,6 +4,7 @@ import { faChevronLeft, faChevronRight, faCheck } from '@fortawesome/free-solid-
 import { faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
 import './Testimonials.css';
+import './testimonials-enhanced.css';
 
 // Usar las variables de color definidas en colors.css
 // No sobrescribimos las variables para mantener la coherencia de la paleta
@@ -163,68 +164,25 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="testimonials-section" style={{
-      backgroundColor: '#fff',
-      padding: '4rem 0',
-      width: '100%',
-      boxSizing: 'border-box',
-      fontFamily: 'Roboto, Arial, sans-serif'
-    }}>
-      <div className="testimonials-container" style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        padding: '0 20px',
-        position: 'relative',
-        width: '100%',
-        boxSizing: 'border-box'
-      }}>
+    <section className="testimonials-section testimonials-section-enhanced">
+      <div className="testimonials-container testimonials-container-enhanced">
         {/* Google Reviews Header */}
-        <div className="google-reviews-header" style={{
-          margin: '0 auto 3rem',
-          textAlign: 'center',
-          maxWidth: '800px',
-          position: 'relative',
-          zIndex: 1,
-          padding: '0 20px',
-          boxSizing: 'border-box'
-        }}>
-          <h2 className="google-reviews-title" style={{
-            fontSize: '2.2rem',
-            fontWeight: 600,
-            margin: '0 0 1.5rem',
-            color: '#202124',
-            lineHeight: '1.2'
-          }}>¿QUÉ OPINAN NUESTROS CLIENTES?</h2>
+        <div className="google-reviews-header testimonials-header-enhanced">
+          <h2 className="google-reviews-title testimonials-title-enhanced">¿QUÉ OPINAN NUESTROS CLIENTES?</h2>
 
-          <div className="google-reviews-rating" style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            marginBottom: '1.5rem',
-            position: 'relative',
-            zIndex: 1
-          }}>
-            <div className="google-reviews-stars" style={{
-              display: 'flex',
-              gap: '4px',
-              marginBottom: '0.75rem',
-              justifyContent: 'center'
-            }}>
+          <div className="google-reviews-rating">
+            <div className="google-reviews-stars testimonials-stars-enhanced">
               {renderStars(averageRating)}
             </div>
             {/* El texto de reseñas ha sido eliminado a petición del usuario */}
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              marginTop: '0.5rem'
-            }}>
-              <GoogleLogo />
+            <div className="google-logo-container">
+              <GoogleLogo className="google-logo-enhanced" />
             </div>
           </div>
         </div>
 
-        {/* Testimonials Carousel */}
-        <div style={{
+        {/* Testimonials Carousel Container */}
+        <div className="testimonials-carousel-container" style={{
           position: 'relative',
           width: '100%',
           maxWidth: '1200px',
@@ -236,50 +194,15 @@ const Testimonials = () => {
         }}>
           {/* Botón anterior */}
           <button
-            className="testimonial-nav prev"
+            className="testimonial-nav-enhanced prev"
             onClick={goToPrev}
             aria-label="Anterior testimonio"
-            style={{
-              position: 'relative',
-              left: 0,
-              width: '40px',
-              height: '40px',
-              background: 'white',
-              borderRadius: '50%',
-              boxShadow: '0 2px 10px rgba(0,0,0,0.15)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              zIndex: 30,
-              border: 'none',
-              outline: 'none',
-              transition: 'all 0.3s ease',
-              opacity: 0.9,
-              padding: 0,
-              marginRight: '10px'
-            }}
           >
             <FontAwesomeIcon icon={faChevronLeft} style={{ color: '#5f6368' }} />
           </button>
 
           <div
-            className="testimonials-carousel"
-            style={{
-              display: 'flex',
-              gap: '20px',
-              overflowX: 'auto',
-              padding: '20px 0',
-              scrollSnapType: 'x mandatory',
-              WebkitOverflowScrolling: 'touch',
-              scrollbarWidth: 'none',
-              position: 'relative',
-              msOverflowStyle: 'none',
-              scrollBehavior: 'smooth',
-              margin: '0 -10px', // Compensar el padding de las tarjetas
-              flex: 1,
-              minWidth: 0
-            }}
+            className="testimonials-carousel testimonials-carousel-enhanced"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -289,29 +212,8 @@ const Testimonials = () => {
               `.testimonials-carousel::-webkit-scrollbar { display: none; }`
             }</style>
             {testimonials.slice(currentIndex, currentIndex + itemsToShow).map((testimonial) => (
-              <div key={testimonial.id} className="testimonial-card" style={{
-                flex: '0 0 calc(33.333% - 20px)',
-                minWidth: '280px',
-                background: '#f8f9fa',
-                borderRadius: '8px',
-                padding: '24px',
-                boxShadow: '0 1px 2px rgba(0,0,0,0.1)',
-                scrollSnapAlign: 'start',
-                margin: '0 10px',
-                position: 'relative',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                boxSizing: 'border-box',
-                border: '1px solid #e0e0e0'
-              }}>
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '16px',
-                    right: '16px',
-                    display: 'flex',
-                    alignItems: 'center'
-                  }}
-                >
+              <div key={testimonial.id} className="testimonial-card-enhanced">
+                <div className="testimonial-google-badge-enhanced">
                   <span style={{ fontSize: '12px', marginRight: '4px', color: '#555' }}>Reseña de</span>
                   <svg height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg" style={{ fill: '#4285F4' }}>
                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -321,105 +223,54 @@ const Testimonials = () => {
                   </svg>
                 </div>
 
-                <div className="testimonial-header" style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  marginBottom: '16px'
-                }}>
-                  <div className="testimonial-avatar" style={{
-                    width: '48px',
-                    height: '48px',
-                    borderRadius: '50%',
-                    backgroundColor: '#e0e0e0',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '20px',
-                    fontWeight: 500,
-                    color: '#5f6368',
-                    marginRight: '16px',
-                    overflow: 'hidden'
-                  }}>
+                <div className="testimonial-header-enhanced">
+                  <div className="testimonial-avatar-enhanced">
                     {testimonial.initials}
                   </div>
-                  <div className="testimonial-user" style={{ textAlign: 'left' }}>
-                    <h4 className="testimonial-name" style={{
-                      fontWeight: 500,
-                      color: '#202124',
-                      margin: '0 0 4px',
-                      fontSize: '1rem'
-                    }}>{testimonial.name}</h4>
-                    <p className="testimonial-date" style={{
-                      fontSize: '0.85rem',
-                      color: '#5f6368',
-                      margin: 0
-                    }}>{formatDate(testimonial.date)}</p>
+                  <div className="testimonial-user-enhanced">
+                    <h4 className="testimonial-name-enhanced">{testimonial.name}</h4>
+                    <p className="testimonial-date-enhanced">{formatDate(testimonial.date)}</p>
                   </div>
                 </div>
 
-                <div className="testimonial-rating" style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  margin: '8px 0 12px'
-                }}>
-                  <div className="testimonial-rating-stars" style={{
-                    display: 'flex',
-                    gap: '2px',
-                    marginRight: '8px'
-                  }}>
+                <div className="testimonial-rating-enhanced">
+                  <div className="testimonial-stars-enhanced">
                     {renderStars(testimonial.rating)}
                   </div>
-                  <div className="testimonial-verified" style={{
-                    color: '#1a73e8',
-                    fontSize: '0.8rem',
-                    display: 'flex',
-                    alignItems: 'center'
-                  }}>
+                  <div className="testimonial-verified-enhanced">
                     <FontAwesomeIcon icon={faCheck} style={{ marginRight: '4px', fontSize: '0.7rem' }} />
                     <span>Verificado</span>
                   </div>
                 </div>
 
-                <p className="testimonial-content" style={{
-                  textAlign: 'left',
-                  color: '#3c4043',
-                  lineHeight: 1.6,
-                  fontSize: '0.95rem',
-                  margin: 0,
-                  fontFamily: 'Roboto, Arial, sans-serif'
-                }}>{testimonial.content}</p>
+                <p className="testimonial-content-enhanced">{testimonial.content}</p>
               </div>
             ))}
           </div>
 
           {/* Botón siguiente */}
           <button
-            className="testimonial-nav next"
+            className="testimonial-nav-enhanced next"
             onClick={goToNext}
             aria-label="Siguiente testimonio"
-            style={{
-              position: 'relative',
-              right: 0,
-              width: '40px',
-              height: '40px',
-              background: 'white',
-              borderRadius: '50%',
-              boxShadow: '0 2px 10px rgba(0,0,0,0.15)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              zIndex: 30,
-              border: 'none',
-              outline: 'none',
-              transition: 'all 0.3s ease',
-              opacity: 0.9,
-              padding: 0,
-              marginLeft: '10px'
-            }}
           >
             <FontAwesomeIcon icon={faChevronRight} style={{ color: '#5f6368' }} />
           </button>
+        </div>
+        
+        {/* Indicadores de navegación */}
+        <div className="testimonial-indicators">
+          {Array(testimonials.length - itemsToShow + 1).fill(0).map((_, index) => (
+            <div 
+              key={index} 
+              className={`testimonial-indicator ${currentIndex === index ? 'active' : ''}`}
+              onClick={() => {
+                setIsTransitioning(true);
+                setCurrentIndex(index);
+                setTimeout(() => setIsTransitioning(false), 300);
+              }}
+            />
+          ))}
         </div>
       </div>
     </section>

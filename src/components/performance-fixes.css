@@ -22,8 +22,6 @@ body::-webkit-scrollbar {
 
 /* Optimización de rendimiento */
 * {
-  will-change: auto !important; /* Prevenir uso excesivo de GPU */
-  backface-visibility: hidden; /* Reducir parpadeos */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
