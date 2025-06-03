@@ -1,0 +1,491 @@
+/* Testimonials Enhanced Styles - Modern Design 2025 */
+
+/* Variables específicas para testimonios */
+:root {
+  --testimonial-primary: #b27c60;
+  --testimonial-secondary: #c8a08b;
+  --testimonial-gradient: linear-gradient(135deg, var(--testimonial-primary), var(--testimonial-secondary));
+  --testimonial-card-bg: rgba(255, 255, 255, 0.85);
+  --testimonial-shadow: 0 10px 30px rgba(178, 124, 96, 0.15);
+  --testimonial-hover-shadow: 0 15px 40px rgba(178, 124, 96, 0.25);
+  --testimonial-border-radius: 16px;
+  --testimonial-border-color: rgba(178, 124, 96, 0.2);
+  --testimonial-text-color: #3c3c3c;
+  --testimonial-accent: #b27c60;
+  --testimonial-light-bg: #FCF4EC; /* Actualizado al color exacto solicitado */
+}
+
+/* Contenedor principal de testimonios con fondo mejorado */
+.testimonials-section-enhanced {
+  padding: 6rem 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+  background-color: #FCF4EC; /* Actualizado al color exacto solicitado */
+  background-image: 
+    radial-gradient(circle at 20% 35%, rgba(178, 124, 96, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 65%, rgba(200, 160, 139, 0.05) 0%, transparent 50%);
+  overflow: hidden;
+}
+
+/* Elementos decorativos de fondo */
+.testimonials-section-enhanced::before,
+.testimonials-section-enhanced::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: var(--testimonial-gradient);
+  opacity: 0.03;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.testimonials-section-enhanced::before {
+  top: -100px;
+  left: -100px;
+}
+
+.testimonials-section-enhanced::after {
+  bottom: -100px;
+  right: -100px;
+}
+
+/* Contenedor con ancho máximo */
+.testimonials-container-enhanced {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+/* Encabezado de testimonios con estilo mejorado */
+.testimonials-header-enhanced {
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.testimonials-title-enhanced {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+  color: var(--testimonial-primary);
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+}
+
+/* Decoración elegante para el título */
+.testimonials-title-enhanced::before,
+.testimonials-title-enhanced::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  background: var(--testimonial-gradient);
+  border-radius: 3px;
+  bottom: -10px;
+}
+
+.testimonials-title-enhanced::before {
+  width: 60%;
+  left: 20%;
+  opacity: 0.8;
+}
+
+.testimonials-title-enhanced::after {
+  width: 30%;
+  left: 35%;
+  bottom: -18px;
+  opacity: 0.6;
+}
+
+/* Estrellas de valoración con animación sutil */
+.testimonials-stars-enhanced {
+  display: flex;
+  gap: 8px;
+  margin: 1.5rem auto;
+  justify-content: center;
+}
+
+.testimonials-stars-enhanced svg {
+  color: #F4B400;
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(244, 180, 0, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.testimonials-stars-enhanced:hover svg {
+  animation: star-pulse 1.5s infinite alternate;
+}
+
+@keyframes star-pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+/* Logo de Google con estilo mejorado */
+.google-logo-enhanced {
+  margin: 1rem auto;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.google-logo-enhanced:hover {
+  transform: translateY(-2px);
+}
+
+/* Carrusel de testimonios con diseño mejorado */
+.testimonials-carousel-enhanced {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  padding: 30px 60px; /* Aumentado el padding lateral para dar espacio a los botones */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonials-carousel-enhanced::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tarjetas de testimonios con diseño glassmorphism */
+.testimonial-card-enhanced {
+  flex: 0 0 calc(33.333% - 25px);
+  min-width: 280px;
+  background: var(--testimonial-card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--testimonial-border-radius);
+  padding: 35px 30px;
+  box-shadow: var(--testimonial-shadow);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid var(--testimonial-border-color);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  height: 320px;
+  overflow: hidden;
+}
+
+.testimonial-card-enhanced::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--testimonial-gradient);
+  border-radius: var(--testimonial-border-radius) var(--testimonial-border-radius) 0 0;
+  opacity: 0.7;
+}
+
+.testimonial-card-enhanced:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--testimonial-hover-shadow);
+}
+
+/* Efecto de brillo en hover */
+.testimonial-card-enhanced::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  transform: rotate(30deg);
+}
+
+.testimonial-card-enhanced:hover::after {
+  opacity: 1;
+}
+
+/* Logo de Google en la tarjeta */
+.testimonial-google-badge-enhanced {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 4px 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Cabecera de la tarjeta de testimonios */
+.testimonial-header-enhanced {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Avatar del cliente con borde decorativo */
+.testimonial-avatar-enhanced {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--testimonial-primary);
+  margin-right: 18px;
+  border: 2px solid var(--testimonial-border-color);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-avatar-enhanced::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+}
+
+/* Información del usuario */
+.testimonial-user-enhanced {
+  text-align: left;
+}
+
+.testimonial-name-enhanced {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: var(--testimonial-primary);
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+}
+
+.testimonial-date-enhanced {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Estrellas de valoración en la tarjeta */
+.testimonial-rating-enhanced {
+  display: flex;
+  align-items: center;
+  margin: 12px 0;
+}
+
+.testimonial-stars-enhanced {
+  display: flex;
+  gap: 3px;
+  margin-right: 10px;
+}
+
+.testimonial-stars-enhanced svg {
+  color: #F4B400;
+  font-size: 1rem;
+  filter: drop-shadow(0 1px 2px rgba(244, 180, 0, 0.2));
+}
+
+/* Badge de verificado */
+.testimonial-verified-enhanced {
+  background-color: rgba(26, 115, 232, 0.1);
+  color: #1a73e8;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.testimonial-verified-enhanced svg {
+  margin-right: 4px;
+  font-size: 0.7rem;
+}
+
+/* Contenido del testimonio */
+.testimonial-content-enhanced {
+  text-align: left;
+  color: var(--testimonial-text-color);
+  line-height: 1.7;
+  font-size: 1rem;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* Estilizar scrollbar para el contenido */
+.testimonial-content-enhanced::-webkit-scrollbar {
+  width: 4px;
+}
+
+.testimonial-content-enhanced::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.testimonial-content-enhanced::-webkit-scrollbar-thumb {
+  background: var(--testimonial-secondary);
+  border-radius: 10px;
+}
+
+/* Comillas decorativas */
+.testimonial-content-enhanced::before {
+  content: "“";
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  font-size: 3rem;
+  color: var(--testimonial-primary);
+  opacity: 0.2;
+  font-family: 'Playfair Display', serif;
+  line-height: 1;
+}
+
+/* Botones de navegación mejorados */
+.testimonial-nav-enhanced {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.testimonial-nav-enhanced.prev {
+  left: 0; /* Ajustado para que no aparezca cortado */
+}
+
+.testimonial-nav-enhanced.next {
+  right: 0; /* Ajustado para que no aparezca cortado */
+}
+
+.testimonial-nav-enhanced:hover {
+  background: var(--testimonial-gradient);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.testimonial-nav-enhanced:hover svg {
+  color: white;
+}
+
+.testimonial-nav-enhanced svg {
+  color: var(--testimonial-primary);
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+/* Indicadores de navegación (puntos) */
+.testimonial-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 8px;
+}
+
+.testimonial-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.testimonial-indicator.active {
+  background: var(--testimonial-gradient);
+  width: 20px;
+  border-radius: 10px;
+}
+
+/* Adaptaciones responsive */
+@media (max-width: 992px) {
+  .testimonial-card-enhanced {
+    flex: 0 0 calc(50% - 25px);
+  }
+  
+  .testimonials-title-enhanced {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-card-enhanced {
+    flex: 0 0 calc(100% - 25px);
+    height: auto;
+    min-height: 280px;
+  }
+  
+  .testimonials-section-enhanced {
+    padding: 4rem 0;
+  }
+  
+  .testimonials-title-enhanced {
+    font-size: 2.2rem;
+  }
+  
+  .testimonial-nav-enhanced {
+    top: auto;
+    bottom: -60px;
+    transform: none;
+  }
+  
+  .testimonial-nav-enhanced.prev {
+    left: calc(50% - 60px);
+  }
+  
+  .testimonial-nav-enhanced.next {
+    right: calc(50% - 60px);
+  }
+  
+  .testimonial-indicators {
+    margin-top: 4rem;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.testimonial-card-enhanced {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.testimonial-card-enhanced:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.testimonial-card-enhanced:nth-child(3) {
+  animation-delay: 0.4s;
+}

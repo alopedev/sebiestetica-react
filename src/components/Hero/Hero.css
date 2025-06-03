@@ -31,7 +31,7 @@
   color: white;
   overflow: hidden;
   padding: 0 var(--spacing-md);
-  margin: 120px auto 0; /* Aumentado de 80px a 120px para bajar el hero */
+  margin: 60px auto 0; /* Reducido para acercar el hero al header */
   text-align: left; /* Alineación a la izquierda */
   width: 100%;
   max-width: 1400px;

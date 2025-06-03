@@ -7,9 +7,9 @@ import './Hero.css';
 import './mobile-hero-fix.css'; // Solución para problemas responsive en móviles
 
 // Importar las imágenes
-import imagenEntrada from '../../assets/images/entrada.png';
-import imagenEntradaFrontal from '../../assets/images/entrada frontal.png';
-import imagenCristalExterior from '../../assets/images/cristal exterior.png';
+import imagenEntrada from '../../assets/images/entrada.webp';
+import imagenEntradaFrontal from '../../assets/images/entrada frontal.webp';
+import imagenCristalExterior from '../../assets/images/cristal exterior.webp';
 
 const Hero = () => {
   const [isLoading, setIsLoading] = useState(true);

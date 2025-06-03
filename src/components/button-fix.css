@@ -24,48 +24,6 @@ section[data-component-name="AboutSection"] a.btn:hover {
   background-color: var(--primary-color, #8B5A2B) !important;
 }
 
-/* Correcciones para el botón de contacto */
-.btn-primary, .btn-secondary {
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-radius: 4px;
-  padding: 12px 24px;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  min-width: 140px;
-  text-align: center;
-  height: 45px; /* Altura consistente para todos los botones */
-}
-
-.btn-primary {
-  background-color: var(--primary-color, #BA6B47);
-  color: white;
-  border: 2px solid var(--primary-color, #BA6B47);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: var(--primary-color, #BA6B47);
-  border: 2px solid var(--primary-color, #BA6B47);
-}
-
-.btn-primary:hover {
-  background-color: var(--primary-color-dark, #a65c3b);
-  border-color: var(--primary-color-dark, #a65c3b);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.btn-secondary:hover {
-  background-color: rgba(186, 107, 71, 0.1);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
 /* Corrección específica para el botón "Ver Todos los Servicios" */
 .services-cta .btn-primary {
   width: auto !important;

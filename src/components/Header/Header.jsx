@@ -81,20 +81,7 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
           >
             <FontAwesomeIcon icon={faPhone} />
           </a>
-          {/* Icono de mapa en la barra social para móvil */}
-          <a 
-            href="/ubicacion" 
-            className="map-link mobile-location-btn"
-            aria-label="¿Dónde estamos?"
-            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px' }}
-            onClick={(e) => {
-              e.preventDefault();
-              console.log('Ubicación clic');
-              navigateWithTransition('/ubicacion');
-            }}
-          >
-            <FontAwesomeIcon icon={faMapMarkerAlt} />
-          </a>
+          {/* Icono de mapa eliminado para evitar redundancia con el botón principal */}
         </div>
       </div>
       
@@ -133,23 +120,9 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
               e.preventDefault();
               navigateWithTransition('/ubicacion');
             }}
-            style={{
-              height: '38px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '0 15px',
-              borderRadius: '5px',
-              backgroundColor: 'rgba(178, 124, 96, 0.9)',
-              color: 'white',
-              textDecoration: 'none',
-              fontWeight: 'bold',
-              fontSize: '14px',
-              marginLeft: 'auto', /* En desktop, lo coloca a la derecha */
-              minWidth: '180px', /* Ancho mínimo para asegurar texto en una sola línea */
-              whiteSpace: 'nowrap' /* Evita que el texto se divida en varias líneas */
-            }}
-          >¿Dónde estamos?</a>
+          >
+            ¿Dónde estamos?
+          </a>
           
           {/* Botón de mapa para móvil ahora movido a la barra social */}
         </div>
