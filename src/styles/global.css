@@ -41,9 +41,9 @@
   --warm-accent: var(--color-text-lighter);
   
   /* Tipografía */
-  --font-primary: 'Playfair Display', serif;
-  --font-heading: var(--font-primary);
-  --font-body: var(--font-primary);
+  --font-headings: 'Playfair Display', serif;
+  --font-body-text: 'Montserrat', sans-serif;
+
 
   /* Tamaños de fuente */
   --text-xs: 0.75rem;    /* 12px */
@@ -64,6 +64,15 @@
   --spacing-lg: 2.5rem;   /* 40px */
   --spacing-xl: 4rem;     /* 64px */
   --spacing-2xl: 6rem;    /* 96px */
+
+  /* Layout */
+  --max-container-width: 1200px;
+  --container-padding-x: var(--spacing-md); /* 1.5rem = 24px */
+
+  /* Variables de Diseño Generales (movidas de index.css) */
+  --border-radius-general: 8px; /* Renombrada de --border-radius para evitar conflicto con las específicas */
+  --box-shadow-general: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --transition-general: all 0.3s ease;
 
   /* Bordes y sombras */
   --border-radius-sm: 4px;
@@ -99,25 +108,61 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-body-text);
   font-size: var(--text-base);
   font-weight: 400;
   line-height: 1.6;
-  color: var(--color-text);
-  background-color: var(--color-background);
+  color: var(--color-text); 
+  background-color: var(--color-background); 
+  min-width: 320px; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
-  overflow-y: visible; /* Allow body content to be scrollable */
+  overflow-y: visible; 
+  min-height: 100vh;
 }
 
 /* Tipografía mejorada */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-primary);
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  color: var(--primary-color);
+  font-family: var(--font-headings);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-primary-dark);
+  letter-spacing: -0.02em;
+  /* margin-bottom will be set per heading level */
+}
+
+h1 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md); /* 1.5rem */
+}
+
+h2 {
+  font-size: var(--text-4xl); /* 2.25rem */
+  color: var(--color-accent-dark);
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+  margin-bottom: var(--spacing-sm); /* 1rem */
+}
+
+h4 {
+  font-size: var(--text-2xl); /* 1.5rem */
+  margin-bottom: 0.875rem; /* Corresponds to text-sm */
+}
+
+h5 {
+  font-size: var(--text-xl); /* 1.25rem */
+  margin-bottom: 0.75rem; /* Corresponds to text-xs */
+}
+
+h6 {
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-xs); /* 0.5rem */
 }
 
 h1 {
@@ -135,7 +180,20 @@ h3 {
 }
 
 p {
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-sm); /* 1rem */
+  line-height: 1.7;
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+  text-decoration: underline; /* Keep underline on hover for accessibility */
 }
 
 img {
@@ -145,11 +203,20 @@ img {
 }
 
 /* Utilidades */
+.section {
+  padding: 5rem 0; /* Consider making this a variable e.g., var(--spacing-xl) or var(--section-padding-y) */
+}
+
+.text-center {
+  text-align: center;
+}
+
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--max-container-width);
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding: 0 var(--container-padding-x);
+  box-sizing: border-box;
 }
 
 /* Estilos base para todos los botones */
@@ -196,33 +263,6 @@ img {
   transform: translateX(3px);
 }
 
-/* Estilos específicos para botones primarios */
-.btn-primary, .cta-btn-primary {
-  background-color: var(--primary-color, #BA6B47);
-  color: white;
-  border-color: var(--primary-color, #BA6B47);
-}
-
-.btn-primary:hover, .cta-btn-primary:hover {
-  background-color: var(--primary-color-dark, #a65c3b);
-  border-color: var(--primary-color-dark, #a65c3b);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilos específicos para botones secundarios */
-.btn-secondary, .cta-btn-secondary {
-  background-color: transparent;
-  color: var(--primary-color, #BA6B47);
-  border-color: var(--primary-color, #BA6B47);
-}
-
-.btn-secondary:hover, .cta-btn-secondary:hover {
-  background-color: rgba(186, 107, 71, 0.1);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
 /* Estilos para iconos en botones */
 .btn .btn-icon, .cta-btn .btn-icon,
 .btn svg, .cta-btn svg {
@@ -267,8 +307,6 @@ a.btn:active {
   text-decoration: none !important;
 }
 
-
-
 /* Prevenir cambios de color en hover para todos los botones */
 .btn:hover,
 .btn:focus,
@@ -301,19 +339,19 @@ a.btn:active {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.btn-primary {
+.btn-primary, .cta-btn-primary {
   background: linear-gradient(135deg, var(--warm-accent), var(--accent-color));
   color: white;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 15px rgba(237, 70, 47, 0.3);
 }
 
-.btn-primary:hover {
+.btn-primary:hover, .cta-btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(237, 70, 47, 0.4);
 }
 
-.btn-secondary {
+.btn-secondary, .cta-btn-secondary {
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid white;
   color: white;
@@ -321,11 +359,26 @@ a.btn:active {
   transition: all 0.4s ease, backdrop-filter 0.1s;
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover, .cta-btn-secondary:hover {
   background: rgba(255, 255, 255, 0.2);
   color: white;
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Botón Outline (movido de index.css) */
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  /* Base .btn styles like padding, font-weight, etc., should be inherited */
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-general);
 }
 
 /* Botón con ícono */
@@ -361,6 +414,23 @@ a.btn:active {
 
 .hover-scale:hover {
   transform: scale(1.03);
+}
+
+/* General Animations (from index.css) */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Button Focus Styles (from index.css) */
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color; /* Consider a custom outline that matches the site's theme */
+  outline-offset: 2px; /* Optional: adds a little space */
 }
 
 /* Efecto de borde animado */
@@ -459,6 +529,38 @@ a[data-component-name="CtaSection"].cta-btn .btn-icon {
   height: 1.1em !important;
 }
 
-.fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
+/* Light Mode Styles (migrated from index.css) */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-text: #213547;
+    --color-background: #ffffff;
+    /* Consider defining light mode versions for other color variables if needed */
+    /* e.g., --color-primary-light: #your-light-primary-color; */
+  }
+
+  body {
+    color: var(--color-text);
+    background-color: var(--color-background);
+  }
+
+  a:hover {
+    color: #747bff; /* Specific light mode link hover color */
+  }
+
+  /* General button style for light mode, specific .btn-* classes will override */
+  /* 
+  button {
+    background-color: #f9f9f9; 
+    color: #213547; 
+  }
+  */
+
+  /* If specific button adjustments are needed for light mode, they can be added here */
+  /* For example:
+  .btn-primary {
+    background-color: var(--color-primary-light, #your-light-primary-color);
+    color: var(--color-text-on-primary-light, #ffffff);
+  }
+  */
 }
+

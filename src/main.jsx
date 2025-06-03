@@ -8,9 +8,9 @@ import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import App from './App';
 
 // Importar estilos globales
-import './index.css';
+import './index.css'; // imports colors.css internally
 import './styles/migrated-inline-styles.css';
-import './styles/colors.css';
+// import './styles/colors.css'; // Redundant: colors.css is imported by index.css
 import './styles/global.css';
 import './styles/background-fix.css'; // Corrección para unificar colores y mejorar formulario
 import './styles/layout-fixes.css'; // Corrección para el layout general, formulario y hero
