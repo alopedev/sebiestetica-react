@@ -38,7 +38,14 @@ function ScrollFix() {
   }, [location.pathname]);
 
   // También exportamos la función para usarla directamente en enlaces
-  window.forceScrollToTop = forceScrollToTop;
+  useEffect(() => {
+    window.forceScrollToTop = forceScrollToTop;
+    
+    // Cleanup: remove the global property when component unmounts
+    return () => {
+      delete window.forceScrollToTop;
+    };
+  }, []);
 
   return null; // Este componente no renderiza nada
 }

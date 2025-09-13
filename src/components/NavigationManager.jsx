@@ -9,6 +9,9 @@ const NavigationManager = () => {
 
   // Crear una referencia global a la función navigate para usarla desde cualquier parte
   useEffect(() => {
+    let timeoutId1 = null;
+    let timeoutId2 = null;
+    
     // Función para manejar la navegación con transición
     const handleNavigation = (event) => {
       const { detail } = event;
@@ -23,11 +26,11 @@ const NavigationManager = () => {
         document.body.style.overflow = 'hidden';
 
         // Navegar a la nueva ruta después de un breve retraso
-        setTimeout(() => {
+        timeoutId1 = setTimeout(() => {
           navigate(detail.path);
           
           // Restaurar scroll y ocultar overlay después de la navegación
-          setTimeout(() => {
+          timeoutId2 = setTimeout(() => {
             window.scrollTo(0, 0);
             document.body.style.overflow = '';
             
@@ -46,6 +49,9 @@ const NavigationManager = () => {
     // Limpiar al desmontar
     return () => {
       window.removeEventListener('customNavigate', handleNavigation);
+      // Clear any pending timeouts to prevent race conditions
+      if (timeoutId1) clearTimeout(timeoutId1);
+      if (timeoutId2) clearTimeout(timeoutId2);
     };
   }, [navigate]);
 
