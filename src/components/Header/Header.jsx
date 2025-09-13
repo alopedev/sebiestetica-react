@@ -51,7 +51,6 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
             style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px' }}
             onClick={(e) => {
               // Mantener el evento predeterminado para abrir el enlace
-              console.log('Facebook clic');
             }}
           >
             <FontAwesomeIcon icon={faFacebookF} />
@@ -64,7 +63,6 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
             style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px' }}
             onClick={(e) => {
               // Mantener el evento predeterminado para abrir el enlace
-              console.log('Instagram clic');
             }}
           >
             <FontAwesomeIcon icon={faInstagram} />
@@ -76,7 +74,6 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
             style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px' }}
             onClick={(e) => {
               // Mantener el evento predeterminado para la llamada telefónica
-              console.log('Teléfono clic');
             }}
           >
             <FontAwesomeIcon icon={faPhone} />
